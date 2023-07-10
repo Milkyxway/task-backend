@@ -1,0 +1,766 @@
+2023-07-10 15:15:15,987 ERROR 23690 [-/127.0.0.1/-/0ms GET /] nodejs.ER_NOT_SUPPORTED_AUTH_MODEError: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+    at Sequence._packetToError (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Handshake.js:123:18)
+    at Protocol._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Protocol._enqueue (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:116:18)
+    at Pool.getConnection (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Pool.js:48:16)
+    at node:internal/util:360:7
+    at new Promise (<anonymous>)
+    at Pool.getConnection (node:internal/util:346:12)
+    at Pool.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Pool.js:202:8)
+    at node:internal/util:360:7
+    at new Promise (<anonymous>)
+    sql: select now() as currentTime;
+code: "ER_NOT_SUPPORTED_AUTH_MODE"
+errno: 1251
+sqlMessage: "Client does not support authentication protocol requested by server; consider upgrading MySQL client"
+sqlState: "08004"
+fatal: true
+name: "ER_NOT_SUPPORTED_AUTH_MODEError"
+pid: 23690
+hostname: bogon
+
+2023-07-10 15:17:57,214 ERROR 24200 [-/127.0.0.1/-/0ms GET /] nodejs.ER_NOT_SUPPORTED_AUTH_MODEError: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+    at Sequence._packetToError (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Handshake.js:123:18)
+    at Protocol._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Protocol._enqueue (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:116:18)
+    at Pool.getConnection (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Pool.js:48:16)
+    at node:internal/util:360:7
+    at new Promise (<anonymous>)
+    at Pool.getConnection (node:internal/util:346:12)
+    at Pool.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Pool.js:202:8)
+    at node:internal/util:360:7
+    at new Promise (<anonymous>)
+    sql: select now() as currentTime;
+code: "ER_NOT_SUPPORTED_AUTH_MODE"
+errno: 1251
+sqlMessage: "Client does not support authentication protocol requested by server; consider upgrading MySQL client"
+sqlState: "08004"
+fatal: true
+name: "ER_NOT_SUPPORTED_AUTH_MODEError"
+pid: 24200
+hostname: bogon
+
+2023-07-10 15:22:01,783 ERROR 24436 [-/127.0.0.1/-/1ms GET /] nodejs.ER_ACCESS_DENIED_ERRORError: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)
+    at Sequence._packetToError (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Handshake.js:123:18)
+    at Protocol._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Protocol._enqueue (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:116:18)
+    at Pool.getConnection (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Pool.js:48:16)
+    at node:internal/util:360:7
+    at new Promise (<anonymous>)
+    at Pool.getConnection (node:internal/util:346:12)
+    at Pool.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Pool.js:202:8)
+    at node:internal/util:360:7
+    at new Promise (<anonymous>)
+    sql: select now() as currentTime;
+code: "ER_ACCESS_DENIED_ERROR"
+errno: 1045
+sqlMessage: "Access denied for user 'root'@'localhost' (using password: YES)"
+sqlState: "28000"
+fatal: true
+name: "ER_ACCESS_DENIED_ERRORError"
+pid: 24436
+hostname: bogon
+
+2023-07-10 15:22:26,941 ERROR 24478 [-/127.0.0.1/-/1ms GET /] nodejs.ER_BAD_DB_ERRORError: ER_BAD_DB_ERROR: Unknown database 'first_sql'
+    at Sequence._packetToError (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Handshake.js:123:18)
+    at Protocol._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Protocol._enqueue (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:116:18)
+    at Pool.getConnection (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Pool.js:48:16)
+    at node:internal/util:360:7
+    at new Promise (<anonymous>)
+    at Pool.getConnection (node:internal/util:346:12)
+    at Pool.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Pool.js:202:8)
+    at node:internal/util:360:7
+    at new Promise (<anonymous>)
+    sql: select now() as currentTime;
+code: "ER_BAD_DB_ERROR"
+errno: 1049
+sqlMessage: "Unknown database 'first_sql'"
+sqlState: "42000"
+fatal: true
+name: "ER_BAD_DB_ERRORError"
+pid: 24478
+hostname: bogon
+
+2023-07-10 15:35:36,319 ERROR 24740 [-/127.0.0.1/-/14ms POST /api/task/list] nodejs.TypeError: Cannot read properties of undefined (reading 'task_list')
+    at TaskService.getTasksByQuery (/Users/xujiashuang/Desktop/task-backend/app/service/task.js:14:43)
+    at TaskController.query (/Users/xujiashuang/Desktop/task-backend/app/controller/task.js:13:37)
+    at Object.callFn (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-core@5.3.1@egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-core@5.3.1@egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/xujiashuang/Desktop/task-backend/node_modules/_@eggjs_router@2.0.1@@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/xujiashuang/Desktop/task-backend/node_modules/_@eggjs_router@2.0.1@@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/xujiashuang/Desktop/task-backend/node_modules/_koa-compose@3.2.1@koa-compose/index.js:44:32)
+    at next (/Users/xujiashuang/Desktop/task-backend/node_modules/_koa-compose@3.2.1@koa-compose/index.js:45:18)
+    at /Users/xujiashuang/Desktop/task-backend/node_modules/_@eggjs_router@2.0.1@@eggjs/router/lib/router.js:186:18
+    at dispatch (/Users/xujiashuang/Desktop/task-backend/node_modules/_koa-compose@3.2.1@koa-compose/index.js:44:32)
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+pid: 24740
+hostname: bogon
+
+2023-07-10 15:36:36,612 ERROR 24785 [-/127.0.0.1/-/17ms POST /api/task/list] nodejs.TypeError: Cannot read properties of undefined (reading 'count')
+    at TaskService.getTasksByQuery (/Users/xujiashuang/Desktop/task-backend/app/service/task.js:14:42)
+    at TaskController.query (/Users/xujiashuang/Desktop/task-backend/app/controller/task.js:13:37)
+    at Object.callFn (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-core@5.3.1@egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-core@5.3.1@egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/xujiashuang/Desktop/task-backend/node_modules/_@eggjs_router@2.0.1@@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/xujiashuang/Desktop/task-backend/node_modules/_@eggjs_router@2.0.1@@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/xujiashuang/Desktop/task-backend/node_modules/_koa-compose@3.2.1@koa-compose/index.js:44:32)
+    at next (/Users/xujiashuang/Desktop/task-backend/node_modules/_koa-compose@3.2.1@koa-compose/index.js:45:18)
+    at /Users/xujiashuang/Desktop/task-backend/node_modules/_@eggjs_router@2.0.1@@eggjs/router/lib/router.js:186:18
+    at dispatch (/Users/xujiashuang/Desktop/task-backend/node_modules/_koa-compose@3.2.1@koa-compose/index.js:44:32)
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+pid: 24785
+hostname: bogon
+
+2023-07-10 15:37:09,505 ERROR 24809 [-/127.0.0.1/-/19ms POST /api/task/list] nodejs.ReferenceError: page is not defined
+    at TaskService.getTasksByQuery (/Users/xujiashuang/Desktop/task-backend/app/service/task.js:18:13)
+    at TaskController.query (/Users/xujiashuang/Desktop/task-backend/app/controller/task.js:13:37)
+    at Object.callFn (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-core@5.3.1@egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-core@5.3.1@egg-core/lib/loader/mixin/controller.js:87:20)
+    at Object.callFn (/Users/xujiashuang/Desktop/task-backend/node_modules/_@eggjs_router@2.0.1@@eggjs/router/lib/utils.js:12:21)
+    at wrappedController (/Users/xujiashuang/Desktop/task-backend/node_modules/_@eggjs_router@2.0.1@@eggjs/router/lib/egg_router.js:322:18)
+    at dispatch (/Users/xujiashuang/Desktop/task-backend/node_modules/_koa-compose@3.2.1@koa-compose/index.js:44:32)
+    at next (/Users/xujiashuang/Desktop/task-backend/node_modules/_koa-compose@3.2.1@koa-compose/index.js:45:18)
+    at /Users/xujiashuang/Desktop/task-backend/node_modules/_@eggjs_router@2.0.1@@eggjs/router/lib/router.js:186:18
+    at dispatch (/Users/xujiashuang/Desktop/task-backend/node_modules/_koa-compose@3.2.1@koa-compose/index.js:44:32)
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+pid: 24809
+hostname: bogon
+
+2023-07-10 15:50:18,735 ERROR 26000 [-/127.0.0.1/-/22ms POST /api/task/list] nodejs.ER_PARSE_ERRORError: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1
+    at Sequence._packetToError (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Pool.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Pool.js:199:23)
+    at node:internal/util:360:7
+    at new Promise (<anonymous>)
+    at Pool.query (node:internal/util:346:12)
+    at RDSClient._query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/client.js:33:33)
+    at RDSClient.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:62:31)
+    at TaskService.getTasksByQuery (/Users/xujiashuang/Desktop/task-backend/app/service/task.js:12:56)
+    at TaskController.query (/Users/xujiashuang/Desktop/task-backend/app/controller/task.js:13:37)
+    at Object.callFn (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-core@5.3.1@egg-core/lib/utils/index.js:44:21)
+    at Object.classControllerMiddleware (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-core@5.3.1@egg-core/lib/loader/mixin/controller.js:87:20)
+    sql: SELECT COUNT(*) from task_list'
+code: "ER_PARSE_ERROR"
+errno: 1064
+sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1"
+sqlState: "42000"
+index: 0
+sql: "SELECT COUNT(*) from task_list'"
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+name: "ER_PARSE_ERRORError"
+pid: 26000
+hostname: bogon
+
+2023-07-10 15:50:57,774 ERROR 26029 [-/127.0.0.1/-/28ms POST /api/task/list] nodejs.ER_BAD_FIELD_ERRORError: ER_BAD_FIELD_ERROR: Unknown column 'pageSize' in 'where clause'
+    at Sequence._packetToError (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Pool.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Pool.js:199:23)
+    at node:internal/util:360:7
+    at new Promise (<anonymous>)
+    at Pool.query (node:internal/util:346:12)
+    at RDSClient._query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/client.js:33:33)
+    at RDSClient.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:62:31)
+    at RDSClient.select (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:120:27)
+    at TaskService.selectByCondition (/Users/xujiashuang/Desktop/task-backend/app/service/task.js:51:37)
+    at TaskService.getTasksByQuery (/Users/xujiashuang/Desktop/task-backend/app/service/task.js:15:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    sql: SELECT * FROM `task_list` WHERE `pageSize` = 10 AND `pageNum` = 1 LIMIT 10, 10
+code: "ER_BAD_FIELD_ERROR"
+errno: 1054
+sqlMessage: "Unknown column 'pageSize' in 'where clause'"
+sqlState: "42S22"
+index: 0
+sql: "SELECT * FROM `task_list` WHERE `pageSize` = 10 AND `pageNum` = 1 LIMIT 10, 10"
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+name: "ER_BAD_FIELD_ERRORError"
+pid: 26029
+hostname: bogon
+
+2023-07-10 15:54:21,249 ERROR 26060 [-/127.0.0.1/-/20ms POST /api/task/list] nodejs.ER_PARSE_ERRORError: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '"SELECT * from task_list where limit = 10 and skip = 1"' at line 1
+    at Sequence._packetToError (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Pool.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Pool.js:199:23)
+    at node:internal/util:360:7
+    at new Promise (<anonymous>)
+    at Pool.query (node:internal/util:346:12)
+    at RDSClient._query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/client.js:33:33)
+    at RDSClient.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:62:31)
+    at TaskService.getTasksByQuery (/Users/xujiashuang/Desktop/task-backend/app/service/task.js:15:37)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async TaskController.query (/Users/xujiashuang/Desktop/task-backend/app/controller/task.js:13:18)
+    at async /Users/xujiashuang/Desktop/task-backend/node_modules/_egg-development@2.7.0@egg-development/app/middleware/egg_loader_trace.js:9:50
+    sql: "SELECT * from task_list where limit = 10 and skip = 1"
+code: "ER_PARSE_ERROR"
+errno: 1064
+sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '\"SELECT * from task_list where limit = 10 and skip = 1\"' at line 1"
+sqlState: "42000"
+index: 0
+sql: "\"SELECT * from task_list where limit = 10 and skip = 1\""
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+name: "ER_PARSE_ERRORError"
+pid: 26060
+hostname: bogon
+
+2023-07-10 15:54:52,116 ERROR 26067 [-/127.0.0.1/-/23ms POST /api/task/list] nodejs.ER_PARSE_ERRORError: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit = 10 and skip = 1' at line 1
+    at Sequence._packetToError (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Pool.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Pool.js:199:23)
+    at node:internal/util:360:7
+    at new Promise (<anonymous>)
+    at Pool.query (node:internal/util:346:12)
+    at RDSClient._query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/client.js:33:33)
+    at RDSClient.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:62:31)
+    at TaskService.getTasksByQuery (/Users/xujiashuang/Desktop/task-backend/app/service/task.js:15:37)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async TaskController.query (/Users/xujiashuang/Desktop/task-backend/app/controller/task.js:13:18)
+    at async /Users/xujiashuang/Desktop/task-backend/node_modules/_egg-development@2.7.0@egg-development/app/middleware/egg_loader_trace.js:9:50
+    sql: SELECT * from task_list where limit = 10 and skip = 1
+code: "ER_PARSE_ERROR"
+errno: 1064
+sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit = 10 and skip = 1' at line 1"
+sqlState: "42000"
+index: 0
+sql: "SELECT * from task_list where limit = 10 and skip = 1"
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+name: "ER_PARSE_ERRORError"
+pid: 26067
+hostname: bogon
+
+2023-07-10 15:56:11,827 ERROR 26076 [-/127.0.0.1/-/38ms POST /api/task/list] nodejs.ER_PARSE_ERRORError: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit = 1 and skip = 10' at line 1
+    at Sequence._packetToError (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Pool.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Pool.js:199:23)
+    at node:internal/util:360:7
+    at new Promise (<anonymous>)
+    at Pool.query (node:internal/util:346:12)
+    at RDSClient._query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/client.js:33:33)
+    at RDSClient.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:62:31)
+    at TaskService.getTasksByQuery (/Users/xujiashuang/Desktop/task-backend/app/service/task.js:15:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async TaskController.query (/Users/xujiashuang/Desktop/task-backend/app/controller/task.js:13:18)
+    at async /Users/xujiashuang/Desktop/task-backend/node_modules/_egg-development@2.7.0@egg-development/app/middleware/egg_loader_trace.js:9:50
+    sql: SELECT * from task_list where limit = 1 and skip = 10
+code: "ER_PARSE_ERROR"
+errno: 1064
+sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit = 1 and skip = 10' at line 1"
+sqlState: "42000"
+index: 0
+sql: "SELECT * from task_list where limit = 1 and skip = 10"
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+name: "ER_PARSE_ERRORError"
+pid: 26076
+hostname: bogon
+
+2023-07-10 16:08:14,202 ERROR 26297 [-/127.0.0.1/-/19ms POST /api/task/add] nodejs.ER_WARN_DATA_OUT_OF_RANGEError: ER_WARN_DATA_OUT_OF_RANGE: Out of range value for column 'taskId' at row 1
+    at Sequence._packetToError (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Pool.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Pool.js:199:23)
+    at node:internal/util:360:7
+    at new Promise (<anonymous>)
+    at Pool.query (node:internal/util:346:12)
+    at RDSClient._query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/client.js:33:33)
+    at RDSClient.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:62:31)
+    at RDSClient.insert (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:159:27)
+    at TaskService.addTask (/Users/xujiashuang/Desktop/task-backend/app/service/task.js:29:24)
+    at TaskController.add (/Users/xujiashuang/Desktop/task-backend/app/controller/task.js:26:37)
+    at Object.callFn (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-core@5.3.1@egg-core/lib/utils/index.js:44:21)
+    sql: INSERT INTO `task_list`(`taskId`) VALUES(UUID_SHORT())
+code: "ER_WARN_DATA_OUT_OF_RANGE"
+errno: 1264
+sqlMessage: "Out of range value for column 'taskId' at row 1"
+sqlState: "22003"
+index: 0
+sql: "INSERT INTO `task_list`(`taskId`) VALUES(UUID_SHORT())"
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+name: "ER_WARN_DATA_OUT_OF_RANGEError"
+pid: 26297
+hostname: bogon
+
+2023-07-10 16:09:36,575 ERROR 26379 [-/127.0.0.1/-/7ms POST /api/task/add] nodejs.ER_PARSE_ERRORError: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INT())' at line 1
+    at Sequence._packetToError (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Pool.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Pool.js:199:23)
+    at node:internal/util:360:7
+    at new Promise (<anonymous>)
+    at Pool.query (node:internal/util:346:12)
+    at RDSClient._query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/client.js:33:33)
+    at RDSClient.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:62:31)
+    at RDSClient.insert (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:159:27)
+    at TaskService.addTask (/Users/xujiashuang/Desktop/task-backend/app/service/task.js:29:24)
+    at TaskController.add (/Users/xujiashuang/Desktop/task-backend/app/controller/task.js:26:37)
+    at Object.callFn (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-core@5.3.1@egg-core/lib/utils/index.js:44:21)
+    sql: INSERT INTO `task_list`(`taskId`) VALUES(INT())
+code: "ER_PARSE_ERROR"
+errno: 1064
+sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INT())' at line 1"
+sqlState: "42000"
+index: 0
+sql: "INSERT INTO `task_list`(`taskId`) VALUES(INT())"
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+name: "ER_PARSE_ERRORError"
+pid: 26379
+hostname: bogon
+
+2023-07-10 16:18:37,813 ERROR 26556 [-/127.0.0.1/-/9ms POST /api/task/list] nodejs.ReferenceError: status is not defined
+    at TaskService.getTasksByQuery (/Users/xujiashuang/Desktop/task-backend/app/service/task.js:17:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async TaskController.query (/Users/xujiashuang/Desktop/task-backend/app/controller/task.js:13:18)
+    at async /Users/xujiashuang/Desktop/task-backend/node_modules/_egg-development@2.7.0@egg-development/app/middleware/egg_loader_trace.js:9:50
+    at async xframe (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/lib/middlewares/xframe.js:7:5)
+    at async xssProtection (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/lib/middlewares/xssProtection.js:7:5)
+    at async nosniff (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/lib/middlewares/nosniff.js:8:5)
+    at async noopen (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/lib/middlewares/noopen.js:8:5)
+    at async session (/Users/xujiashuang/Desktop/task-backend/node_modules/_koa-session@6.4.0@koa-session/index.js:41:7)
+    at async bodyParser (/Users/xujiashuang/Desktop/task-backend/node_modules/_koa-bodyparser@4.4.1@koa-bodyparser/index.js:78:5)
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+pid: 26556
+hostname: bogon
+
+2023-07-10 16:21:46,644 ERROR 26615 [-/127.0.0.1/-/23ms POST /api/task/add] nodejs.ER_NO_DEFAULT_FOR_FIELDError: ER_NO_DEFAULT_FOR_FIELD: Field 'taskId' doesn't have a default value
+    at Sequence._packetToError (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Pool.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Pool.js:199:23)
+    at node:internal/util:360:7
+    at new Promise (<anonymous>)
+    at Pool.query (node:internal/util:346:12)
+    at RDSClient._query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/client.js:33:33)
+    at RDSClient.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:62:31)
+    at RDSClient.insert (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:159:27)
+    at TaskService.addTask (/Users/xujiashuang/Desktop/task-backend/app/service/task.js:34:24)
+    at TaskController.add (/Users/xujiashuang/Desktop/task-backend/app/controller/task.js:26:37)
+    at Object.callFn (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-core@5.3.1@egg-core/lib/utils/index.js:44:21)
+    sql: INSERT INTO `task_list`() VALUES()
+code: "ER_NO_DEFAULT_FOR_FIELD"
+errno: 1364
+sqlMessage: "Field 'taskId' doesn't have a default value"
+sqlState: "HY000"
+index: 0
+sql: "INSERT INTO `task_list`() VALUES()"
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+name: "ER_NO_DEFAULT_FOR_FIELDError"
+pid: 26615
+hostname: bogon
+
+2023-07-10 16:34:05,166 ERROR 26779 [-/127.0.0.1/-/14ms POST /api/task/add] nodejs.ER_BAD_FIELD_ERRORError: ER_BAD_FIELD_ERROR: Unknown column 'name' in 'field list'
+    at Sequence._packetToError (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Pool.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Pool.js:199:23)
+    at node:internal/util:360:7
+    at new Promise (<anonymous>)
+    at Pool.query (node:internal/util:346:12)
+    at RDSClient._query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/client.js:33:33)
+    at RDSClient.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:62:31)
+    at RDSClient.insert (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:159:27)
+    at TaskService.addTask (/Users/xujiashuang/Desktop/task-backend/app/service/task.js:35:24)
+    at TaskController.add (/Users/xujiashuang/Desktop/task-backend/app/controller/task.js:26:37)
+    at Object.callFn (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-core@5.3.1@egg-core/lib/utils/index.js:44:21)
+    sql: INSERT INTO `task_list`(`name`, `category`, `taskContent`, `orgnization`, `taskGoal`, `status`, `comment`) VALUES('', 2, '任务内容', '', '任务目标', 2, '备注')
+code: "ER_BAD_FIELD_ERROR"
+errno: 1054
+sqlMessage: "Unknown column 'name' in 'field list'"
+sqlState: "42S22"
+index: 0
+sql: "INSERT INTO `task_list`(`name`, `category`, `taskContent`, `orgnization`, `taskGoal`, `status`, `comment`) VALUES('', 2, '任务内容', '', '任务目标', 2, '备注')"
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+name: "ER_BAD_FIELD_ERRORError"
+pid: 26779
+hostname: bogon
+
+2023-07-10 16:35:11,055 ERROR 26779 [-/127.0.0.1/-/7ms POST /api/task/add] nodejs.ER_BAD_FIELD_ERRORError: ER_BAD_FIELD_ERROR: Unknown column 'name' in 'field list'
+    at Sequence._packetToError (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Pool.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Pool.js:199:23)
+    at node:internal/util:360:7
+    at new Promise (<anonymous>)
+    at Pool.query (node:internal/util:346:12)
+    at RDSClient._query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/client.js:33:33)
+    at RDSClient.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:62:31)
+    at RDSClient.insert (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:159:27)
+    at TaskService.addTask (/Users/xujiashuang/Desktop/task-backend/app/service/task.js:35:24)
+    at TaskController.add (/Users/xujiashuang/Desktop/task-backend/app/controller/task.js:26:37)
+    at Object.callFn (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-core@5.3.1@egg-core/lib/utils/index.js:44:21)
+    sql: INSERT INTO `task_list`(`name`, `category`, `taskContent`, `orgnization`, `taskGoal`, `status`, `comment`) VALUES('', 2, '任务内容', '', '任务目标', 2, '备注')
+code: "ER_BAD_FIELD_ERROR"
+errno: 1054
+sqlMessage: "Unknown column 'name' in 'field list'"
+sqlState: "42S22"
+index: 0
+sql: "INSERT INTO `task_list`(`name`, `category`, `taskContent`, `orgnization`, `taskGoal`, `status`, `comment`) VALUES('', 2, '任务内容', '', '任务目标', 2, '备注')"
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+name: "ER_BAD_FIELD_ERRORError"
+pid: 26779
+hostname: bogon
+
+2023-07-10 16:35:38,779 ERROR 26779 [-/127.0.0.1/-/6ms POST /api/task/add] nodejs.ER_BAD_FIELD_ERRORError: ER_BAD_FIELD_ERROR: Unknown column 'name' in 'field list'
+    at Sequence._packetToError (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Pool.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Pool.js:199:23)
+    at node:internal/util:360:7
+    at new Promise (<anonymous>)
+    at Pool.query (node:internal/util:346:12)
+    at RDSClient._query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/client.js:33:33)
+    at RDSClient.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:62:31)
+    at RDSClient.insert (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:159:27)
+    at TaskService.addTask (/Users/xujiashuang/Desktop/task-backend/app/service/task.js:35:24)
+    at TaskController.add (/Users/xujiashuang/Desktop/task-backend/app/controller/task.js:26:37)
+    at Object.callFn (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-core@5.3.1@egg-core/lib/utils/index.js:44:21)
+    sql: INSERT INTO `task_list`(`name`, `category`, `taskContent`, `orgnization`, `taskGoal`, `status`, `comment`) VALUES('', 2, '任务内容', '', '任务目标', 2, '备注')
+code: "ER_BAD_FIELD_ERROR"
+errno: 1054
+sqlMessage: "Unknown column 'name' in 'field list'"
+sqlState: "42S22"
+index: 0
+sql: "INSERT INTO `task_list`(`name`, `category`, `taskContent`, `orgnization`, `taskGoal`, `status`, `comment`) VALUES('', 2, '任务内容', '', '任务目标', 2, '备注')"
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+name: "ER_BAD_FIELD_ERRORError"
+pid: 26779
+hostname: bogon
+
+2023-07-10 16:37:36,381 ERROR 26779 [-/127.0.0.1/-/7ms POST /api/task/add] nodejs.ER_BAD_FIELD_ERRORError: ER_BAD_FIELD_ERROR: Unknown column 'name' in 'field list'
+    at Sequence._packetToError (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Pool.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Pool.js:199:23)
+    at node:internal/util:360:7
+    at new Promise (<anonymous>)
+    at Pool.query (node:internal/util:346:12)
+    at RDSClient._query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/client.js:33:33)
+    at RDSClient.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:62:31)
+    at RDSClient.insert (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:159:27)
+    at TaskService.addTask (/Users/xujiashuang/Desktop/task-backend/app/service/task.js:35:24)
+    at TaskController.add (/Users/xujiashuang/Desktop/task-backend/app/controller/task.js:26:37)
+    at Object.callFn (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-core@5.3.1@egg-core/lib/utils/index.js:44:21)
+    sql: INSERT INTO `task_list`(`name`, `category`, `taskContent`, `orgnization`, `taskGoal`, `status`, `comment`) VALUES('', 2, '任务内容', '', '任务目标', 2, '备注')
+code: "ER_BAD_FIELD_ERROR"
+errno: 1054
+sqlMessage: "Unknown column 'name' in 'field list'"
+sqlState: "42S22"
+index: 0
+sql: "INSERT INTO `task_list`(`name`, `category`, `taskContent`, `orgnization`, `taskGoal`, `status`, `comment`) VALUES('', 2, '任务内容', '', '任务目标', 2, '备注')"
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+name: "ER_BAD_FIELD_ERRORError"
+pid: 26779
+hostname: bogon
+
+2023-07-10 16:37:42,684 ERROR 26779 [-/127.0.0.1/-/3ms POST /api/task/add] nodejs.ER_BAD_FIELD_ERRORError: ER_BAD_FIELD_ERROR: Unknown column 'name' in 'field list'
+    at Sequence._packetToError (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Pool.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Pool.js:199:23)
+    at node:internal/util:360:7
+    at new Promise (<anonymous>)
+    at Pool.query (node:internal/util:346:12)
+    at RDSClient._query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/client.js:33:33)
+    at RDSClient.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:62:31)
+    at RDSClient.insert (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:159:27)
+    at TaskService.addTask (/Users/xujiashuang/Desktop/task-backend/app/service/task.js:35:24)
+    at TaskController.add (/Users/xujiashuang/Desktop/task-backend/app/controller/task.js:26:37)
+    at Object.callFn (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-core@5.3.1@egg-core/lib/utils/index.js:44:21)
+    sql: INSERT INTO `task_list`(`name`, `category`, `taskContent`, `orgnization`, `taskGoal`, `status`, `comment`) VALUES('', 2, '任务内容', '', '任务目标', 2, '备注')
+code: "ER_BAD_FIELD_ERROR"
+errno: 1054
+sqlMessage: "Unknown column 'name' in 'field list'"
+sqlState: "42S22"
+index: 0
+sql: "INSERT INTO `task_list`(`name`, `category`, `taskContent`, `orgnization`, `taskGoal`, `status`, `comment`) VALUES('', 2, '任务内容', '', '任务目标', 2, '备注')"
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+name: "ER_BAD_FIELD_ERRORError"
+pid: 26779
+hostname: bogon
+
+2023-07-10 16:38:12,146 ERROR 26779 [-/127.0.0.1/-/5ms POST /api/task/add] nodejs.ER_BAD_FIELD_ERRORError: ER_BAD_FIELD_ERROR: Unknown column 'orgnization' in 'field list'
+    at Sequence._packetToError (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Pool.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Pool.js:199:23)
+    at node:internal/util:360:7
+    at new Promise (<anonymous>)
+    at Pool.query (node:internal/util:346:12)
+    at RDSClient._query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/client.js:33:33)
+    at RDSClient.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:62:31)
+    at RDSClient.insert (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:159:27)
+    at TaskService.addTask (/Users/xujiashuang/Desktop/task-backend/app/service/task.js:35:24)
+    at TaskController.add (/Users/xujiashuang/Desktop/task-backend/app/controller/task.js:26:37)
+    at Object.callFn (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-core@5.3.1@egg-core/lib/utils/index.js:44:21)
+    sql: INSERT INTO `task_list`(`category`, `taskContent`, `orgnization`, `taskGoal`, `status`, `comment`) VALUES('3', 'content', '', 'goal', '', 'comment')
+code: "ER_BAD_FIELD_ERROR"
+errno: 1054
+sqlMessage: "Unknown column 'orgnization' in 'field list'"
+sqlState: "42S22"
+index: 0
+sql: "INSERT INTO `task_list`(`category`, `taskContent`, `orgnization`, `taskGoal`, `status`, `comment`) VALUES('3', 'content', '', 'goal', '', 'comment')"
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+name: "ER_BAD_FIELD_ERRORError"
+pid: 26779
+hostname: bogon
+
+2023-07-10 16:38:38,071 ERROR 26779 [-/127.0.0.1/-/2ms POST /api/task/add] nodejs.ER_BAD_FIELD_ERRORError: ER_BAD_FIELD_ERROR: Unknown column 'orgnization' in 'field list'
+    at Sequence._packetToError (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Pool.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Pool.js:199:23)
+    at node:internal/util:360:7
+    at new Promise (<anonymous>)
+    at Pool.query (node:internal/util:346:12)
+    at RDSClient._query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/client.js:33:33)
+    at RDSClient.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:62:31)
+    at RDSClient.insert (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:159:27)
+    at TaskService.addTask (/Users/xujiashuang/Desktop/task-backend/app/service/task.js:35:24)
+    at TaskController.add (/Users/xujiashuang/Desktop/task-backend/app/controller/task.js:26:37)
+    at Object.callFn (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-core@5.3.1@egg-core/lib/utils/index.js:44:21)
+    sql: INSERT INTO `task_list`(`category`, `taskContent`, `orgnization`, `taskGoal`, `status`, `comment`) VALUES('3', 'content', '12', 'goal', '', 'comment')
+code: "ER_BAD_FIELD_ERROR"
+errno: 1054
+sqlMessage: "Unknown column 'orgnization' in 'field list'"
+sqlState: "42S22"
+index: 0
+sql: "INSERT INTO `task_list`(`category`, `taskContent`, `orgnization`, `taskGoal`, `status`, `comment`) VALUES('3', 'content', '12', 'goal', '', 'comment')"
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+name: "ER_BAD_FIELD_ERRORError"
+pid: 26779
+hostname: bogon
+
+2023-07-10 16:39:54,503 ERROR 26779 [-/127.0.0.1/-/13ms POST /api/task/add] nodejs.ER_TRUNCATED_WRONG_VALUE_FOR_FIELDError: ER_TRUNCATED_WRONG_VALUE_FOR_FIELD: Incorrect integer value: '' for column 'status' at row 1
+    at Sequence._packetToError (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Pool.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Pool.js:199:23)
+    at node:internal/util:360:7
+    at new Promise (<anonymous>)
+    at Pool.query (node:internal/util:346:12)
+    at RDSClient._query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/client.js:33:33)
+    at RDSClient.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:62:31)
+    at RDSClient.insert (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:159:27)
+    at TaskService.addTask (/Users/xujiashuang/Desktop/task-backend/app/service/task.js:35:24)
+    at TaskController.add (/Users/xujiashuang/Desktop/task-backend/app/controller/task.js:26:37)
+    at Object.callFn (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-core@5.3.1@egg-core/lib/utils/index.js:44:21)
+    sql: INSERT INTO `task_list`(`category`, `taskContent`, `orgnization`, `taskGoal`, `status`, `comment`) VALUES('3', 'content', '12', 'goal', '', 'comment')
+code: "ER_TRUNCATED_WRONG_VALUE_FOR_FIELD"
+errno: 1366
+sqlMessage: "Incorrect integer value: '' for column 'status' at row 1"
+sqlState: "HY000"
+index: 0
+sql: "INSERT INTO `task_list`(`category`, `taskContent`, `orgnization`, `taskGoal`, `status`, `comment`) VALUES('3', 'content', '12', 'goal', '', 'comment')"
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+name: "ER_TRUNCATED_WRONG_VALUE_FOR_FIELDError"
+pid: 26779
+hostname: bogon
+
+2023-07-10 16:43:48,761 ERROR 26779 [-/127.0.0.1/-/6ms POST /api/task/add] nodejs.ER_TRUNCATED_WRONG_VALUE_FOR_FIELDError: ER_TRUNCATED_WRONG_VALUE_FOR_FIELD: Incorrect integer value: '' for column 'orgnization' at row 1
+    at Sequence._packetToError (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/sequences/Query.js:79:18)
+    at Protocol._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:527:28)
+    at addChunk (node:internal/streams/readable:324:12)
+    --------------------
+    at Pool.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_mysql@2.18.1@mysql/lib/Pool.js:199:23)
+    at node:internal/util:360:7
+    at new Promise (<anonymous>)
+    at Pool.query (node:internal/util:346:12)
+    at RDSClient._query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/client.js:33:33)
+    at RDSClient.query (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:62:31)
+    at RDSClient.insert (/Users/xujiashuang/Desktop/task-backend/node_modules/_ali-rds@5.1.2@ali-rds/lib/operator.js:159:27)
+    at TaskService.addTask (/Users/xujiashuang/Desktop/task-backend/app/service/task.js:35:24)
+    at TaskController.add (/Users/xujiashuang/Desktop/task-backend/app/controller/task.js:26:37)
+    at Object.callFn (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-core@5.3.1@egg-core/lib/utils/index.js:44:21)
+    sql: INSERT INTO `task_list`(`category`, `taskContent`, `orgnization`, `taskGoal`, `status`, `comment`) VALUES('4', '网络建设111', '', '建设', '2', '333')
+code: "ER_TRUNCATED_WRONG_VALUE_FOR_FIELD"
+errno: 1366
+sqlMessage: "Incorrect integer value: '' for column 'orgnization' at row 1"
+sqlState: "HY000"
+index: 0
+sql: "INSERT INTO `task_list`(`category`, `taskContent`, `orgnization`, `taskGoal`, `status`, `comment`) VALUES('4', '网络建设111', '', '建设', '2', '333')"
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+name: "ER_TRUNCATED_WRONG_VALUE_FOR_FIELDError"
+pid: 26779
+hostname: bogon
+
