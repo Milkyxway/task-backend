@@ -8,7 +8,24 @@ class RoleController extends Controller {
 		ctx.body = "hi, egg";
 	}
 
-	async query() {}
+	async login() {
+		const { ctx, service } = this;
+		try {
+			const result = await service.role.login(ctx.request.body);
+			return ctx.sendSuccess(result);
+		} catch (e) {
+			return ctx.sendError("账户或密码填写错误");
+		}
+	}
+	async modifypwd() {
+		const { ctx, service } = this;
+		try {
+			const result = await service.role.modifyPwd(ctx.request.body);
+			return ctx.sendSuccess(result);
+		} catch (e) {
+			return ctx.sendError(e);
+		}
+	}
 	async update() {}
 
 	async add() {}

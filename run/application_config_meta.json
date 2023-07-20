@@ -189,6 +189,7 @@
       "declarations": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js"
     },
     "dependencies": {
+      "dayjs": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
       "egg": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
       "egg-cors": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
       "egg-mysql": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",

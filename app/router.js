@@ -14,4 +14,12 @@ module.exports = (app) => {
 	router.post("/api/task/add", controller.task.add);
 	router.delete("/api/task/delete", controller.task.delete);
 	router.put("/api/task/update", controller.task.update);
+	router.put("/api/task/finish", controller.task.setFinish);
+	router.post("/api/task/detail", controller.task.detail);
+	router.post("/api/task/appeal", controller.task.appeal);
+	router.post("/api/task/mine", controller.task.myTask);
+	router.post("/api/subtask/add", controller.task.addChildTask);
+
+	router.post("/api/login", controller.role.login);
+	router.post("/api/modifypwd", controller.role.modifypwd);
 };

@@ -1,5 +1,5 @@
 const Service = require("egg").Service;
-// const db = this.app.mysql.get('')
+const dayjs = require("dayjs");
 class TaskService extends Service {
 	async index() {
 		const result = await this.app.mysql.select("category");
@@ -8,31 +8,93 @@ class TaskService extends Service {
 
 	// 获取任务列表
 	async getTasksByQuery(params) {
-		const { pageNum, pageSize } = params;
-		const [{ "COUNT(*)": total }] = await this.app.mysql.query(
-			"SELECT COUNT(*) from task_list"
+		const {
+			app: { mysql },
+		} = this;
+		const { pageNum, pageSize, keyword, ...rest } = params;
+		const [{ "COUNT(*)": total }] = await mysql.query(
+			`SELECT COUNT(*) from task_list`
 		);
-		// const list = await this.app.mysql.query(`SELECT * from task_list`);
-		const list = await this.selectByCondition({
-			// where: { status, category },
+
+		let notEmptyParams = {};
+		Object.keys(rest).map((i) => {
+			if (rest[i] !== null) {
+				notEmptyParams[i] = rest[i];
+			}
+		});
+
+		let list = await this.selectByCondition({
+			where: notEmptyParams,
+			orders: [["updateTime", "desc"]],
 			limit: +pageSize,
 			offset: +pageNum * pageSize,
 		});
-		return {
-			total,
-			list,
-		};
+
+		return this.setData(list).then((res) => {
+			return {
+				total,
+				list,
+			};
+		});
 	}
+
+	setData = (list) => {
+		return new Promise((resolve, reject) => {
+			let count = 0;
+			if (list.length) {
+				list.map(async (i) => {
+					const children = await this.getChildTasks(i.taskId);
+					i.children = children;
+					count === list.length - 1 && resolve();
+					count++;
+				});
+			} else {
+				resolve();
+			}
+		});
+	};
+
+	getChildTasks = (parentId) => {
+		return new Promise(async (resolve, reject) => {
+			const childTasks = this.selectByCondition(
+				{ where: { parentId } },
+				"subtask_list"
+			);
+			resolve(childTasks);
+		});
+	};
 
 	/**
 	 * 增加任务
 	 * @param {*} query
 	 */
 	async addTask(query) {
-		// const Literal = this.app.mysql.literals.Literal;
-		// const taskId = new Literal("INT()");
-		console.log(query);
-		await this.app.mysql.insert("task_list", { ...query });
+		await this.app.mysql.insert("task_list", {
+			...query,
+			status: 1,
+			createTime: new Date(),
+			updateTime: new Date(),
+		});
+	}
+
+	/**
+	 * 获取任务详情
+	 * @param {*} taskId
+	 */
+	async detail(query) {
+		const detail = await this.app.mysql.select("task_list", {
+			where: query,
+		});
+
+		return new Promise(async (resolve, reject) => {
+			if (detail.length) {
+				this.setData(detail).then((res) => {
+					resolve(detail[0]);
+				});
+			} else {
+				reject();
+			}
+		});
 	}
 
 	/**
@@ -40,19 +102,148 @@ class TaskService extends Service {
 	 * @param {*} query
 	 */
 	async updateTask(query) {
-		await this.app.mysql.update("task_list", { ...query });
+		await this.app.mysql.update("task_list", query, {
+			where: {
+				taskId: query.taskId,
+			},
+		});
 	}
 
 	/**
 	 * 删除任务
 	 * @param {*} query
 	 */
-	async deleteTask(taskId) {
-		await this.app.mysql.delete("task_list", { taskId });
+	async deleteTask(query) {
+		await this.app.mysql.delete("task_list", { taskId: query.taskId });
+		if (query.children) {
+			await this.app.mysql.delete("subtask_list", {
+				where: { parentId: query.taskId },
+			});
+		}
 	}
 
-	async selectByCondition(options = {}) {
-		const list = await this.app.mysql.select("task_list", options);
+	async subTaskSetFinish(query) {
+		// 操作的是子任务 每一条子任务修改状态 所有子任务都完成后把父任务置为完成
+		await this.app.mysql.update(
+			"subtask_list",
+			{ status: 4 },
+			{ where: { subtaskId: query.subtaskId } }
+		);
+
+		const allSubTasks = await this.selectByCondition(
+			{ where: { parentId: query.parentId } },
+			"subtask_list"
+		);
+
+		const allFinishSubTask = await this.selectByCondition(
+			{ where: { status: 4, parentId: query.parentId } },
+			"subtask_list"
+		);
+		if (allFinishSubTask.length === allSubTasks.length) {
+			this.updateTaskStatus(query.parentId, 4);
+		}
+	}
+
+	async setMainTaskFinish(query) {
+		await this.updateTaskStatus(query.taskId, 4);
+		if (query.children.length) {
+			query.children.map(async (i) => {
+				await this.app.mysql.update(
+					"subtask_list",
+					{
+						status: 4,
+					},
+					{
+						where: {
+							parentId: query.taskId,
+						},
+					}
+				);
+			});
+		}
+	}
+	/**
+	 * 置为完成
+	 * @param {*} query
+	 */
+	async finishTask(query) {
+		if (query.parentId) {
+			this.subTaskSetFinish(query);
+		} else {
+			this.setMainTaskFinish(query);
+		}
+	}
+
+	/**
+	 * 设置任务状态为已延期
+	 */
+	setTaskDelay() {
+		const list = this.selectByCondition({ where: { status: 3 } });
+		const delayTask = list.filter((i) => i.finishTime < new Date());
+		if (delayTask.length) {
+			delayTask.map(async (i) => {
+				await this.app.mysql.update(
+					"subtask_list",
+					{ status: 5 },
+					{ where: { subtaskId: i.subtaskId } }
+				);
+				await this.app.mysql.update(
+					"task_list",
+					{ status: 5 },
+					{ where: { taskId: i.parentId } }
+				);
+			});
+		}
+	}
+
+	async updateTaskStatus(taskId, status) {
+		await this.app.mysql.update(
+			"task_list",
+			{ status, updateTime: new Date() },
+			{ where: { taskId } }
+		);
+	}
+
+	/**
+	 * 任务申诉 状态置为 待调整
+	 * @param {*} query
+	 */
+	async appeal(query) {
+		this.updateTaskStatus(query.taskId, 2);
+	}
+
+	/**
+	 * 查询跟我相关的任务
+	 * @param {*} query
+	 * @returns
+	 */
+	async queryMyTask(query) {
+		const { orgnizationId, pageNum, pageSize } = query;
+		let sqlList = `SELECT * from task_list where leadOrg = ${
+			query.orgnizationId
+		} or assistOrg like '%${
+			query.orgnizationId
+		}%' order by updateTime desc limit ${pageNum * pageSize},${pageSize}`;
+		let sqlTotal = `SELECT COUNT(*) from task_list where leadOrg = ${orgnizationId} or assistOrg like '%${orgnizationId}%'`;
+
+		const list = await this.app.mysql.query(sqlList);
+		const [{ "COUNT(*)": total }] = await this.app.mysql.query(sqlTotal);
+
+		return this.setData(list).then((res) => {
+			return {
+				total,
+				list,
+			};
+		});
+	}
+
+	async addChildTask(query) {
+		await this.app.mysql.insert("subtask_list", query.list);
+		this.updateTaskStatus(query.taskId, 3); // 任务拆分即进入进行中
+	}
+
+	async selectByCondition(options = {}, tableName = "task_list") {
+		const list = await this.app.mysql.select(tableName, options);
 		return list;
 	}
 }

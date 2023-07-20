@@ -151,3 +151,15 @@
 2023-07-10 16:32:43,085 INFO 26779 [egg-schedule]: register schedule /Users/xujiashuang/Desktop/task-backend/node_modules/_egg-multipart@3.3.0@egg-multipart/app/schedule/clean_tmpdir.js
 2023-07-10 16:32:43,085 INFO 26779 [egg-schedule]: register schedule /Users/xujiashuang/Desktop/task-backend/node_modules/_egg-logrotator@3.1.0@egg-logrotator/app/schedule/clean_log.js
 2023-07-10 16:32:43,085 INFO 26779 [egg-schedule]: register schedule /Users/xujiashuang/Desktop/task-backend/node_modules/_egg-logrotator@3.1.0@egg-logrotator/app/schedule/rotate_by_file.js
+2023-07-20 09:13:56,811 INFO 4283 [egg-schedule]: register schedule /Users/xujiashuang/Desktop/task-backend/node_modules/_egg-multipart@3.3.0@egg-multipart/app/schedule/clean_tmpdir.js
+2023-07-20 09:13:56,811 INFO 4283 [egg-schedule]: register schedule /Users/xujiashuang/Desktop/task-backend/node_modules/_egg-logrotator@3.1.0@egg-logrotator/app/schedule/clean_log.js
+2023-07-20 09:13:56,811 INFO 4283 [egg-schedule]: register schedule /Users/xujiashuang/Desktop/task-backend/node_modules/_egg-logrotator@3.1.0@egg-logrotator/app/schedule/rotate_by_file.js
+2023-07-20 09:13:56,811 INFO 4283 [egg-schedule]: register schedule /Users/xujiashuang/Desktop/task-backend/app/schedule/checkTaskStatus.js
+2023-07-20 09:13:58,737 INFO 4292 [egg-schedule]: register schedule /Users/xujiashuang/Desktop/task-backend/node_modules/_egg-multipart@3.3.0@egg-multipart/app/schedule/clean_tmpdir.js
+2023-07-20 09:13:58,737 INFO 4292 [egg-schedule]: register schedule /Users/xujiashuang/Desktop/task-backend/node_modules/_egg-logrotator@3.1.0@egg-logrotator/app/schedule/clean_log.js
+2023-07-20 09:13:58,737 INFO 4292 [egg-schedule]: register schedule /Users/xujiashuang/Desktop/task-backend/node_modules/_egg-logrotator@3.1.0@egg-logrotator/app/schedule/rotate_by_file.js
+2023-07-20 09:13:58,737 INFO 4292 [egg-schedule]: register schedule /Users/xujiashuang/Desktop/task-backend/app/schedule/checkTaskStatus.js
+2023-07-20 09:14:01,616 INFO 4297 [egg-schedule]: register schedule /Users/xujiashuang/Desktop/task-backend/node_modules/_egg-multipart@3.3.0@egg-multipart/app/schedule/clean_tmpdir.js
+2023-07-20 09:14:01,616 INFO 4297 [egg-schedule]: register schedule /Users/xujiashuang/Desktop/task-backend/node_modules/_egg-logrotator@3.1.0@egg-logrotator/app/schedule/clean_log.js
+2023-07-20 09:14:01,616 INFO 4297 [egg-schedule]: register schedule /Users/xujiashuang/Desktop/task-backend/node_modules/_egg-logrotator@3.1.0@egg-logrotator/app/schedule/rotate_by_file.js
+2023-07-20 09:14:01,616 INFO 4297 [egg-schedule]: register schedule /Users/xujiashuang/Desktop/task-backend/app/schedule/checkTaskStatus.js
