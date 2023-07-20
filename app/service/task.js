@@ -12,9 +12,6 @@ class TaskService extends Service {
 			app: { mysql },
 		} = this;
 		const { pageNum, pageSize, keyword, ...rest } = params;
-		const [{ "COUNT(*)": total }] = await mysql.query(
-			`SELECT COUNT(*) from task_list`
-		);
 
 		let notEmptyParams = {};
 		Object.keys(rest).map((i) => {
@@ -23,19 +20,35 @@ class TaskService extends Service {
 			}
 		});
 
-		let list = await this.selectByCondition({
-			where: notEmptyParams,
-			orders: [["updateTime", "desc"]],
-			limit: +pageSize,
-			offset: +pageNum * pageSize,
-		});
+		if (keyword) {
+			const list = await mysql.query(
+				`select * from task_list where taskContent like '%${keyword}%'`
+			);
+			const total = await mysql.query(
+				`select count(*) from task_list where taskContent like '%${keyword}'`
+			);
+			return this.setData(list).then((res) => {
+				return {
+					list,
+					total,
+				};
+			});
+		} else {
+			const total = await mysql.count("task_list", notEmptyParams);
+			let list = await this.selectByCondition({
+				where: notEmptyParams,
+				orders: [["updateTime", "desc"]],
+				limit: +pageSize,
+				offset: +pageNum * pageSize,
+			});
 
-		return this.setData(list).then((res) => {
-			return {
-				total,
-				list,
-			};
-		});
+			return this.setData(list).then((res) => {
+				return {
+					total,
+					list,
+				};
+			});
+		}
 	}
 
 	setData = (list) => {

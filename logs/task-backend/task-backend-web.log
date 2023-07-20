@@ -764,3 +764,18 @@ name: "ER_TRUNCATED_WRONG_VALUE_FOR_FIELDError"
 pid: 26779
 hostname: bogon
 
+2023-07-20 10:19:00,467 ERROR 8172 [-/127.0.0.1/-/8ms POST /api/task/list] nodejs.TypeError: Cannot read properties of undefined (reading 'COUNT(*)')
+    at TaskService.getTasksByQuery (/Users/xujiashuang/Desktop/task-backend/app/service/task.js:28:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async TaskController.query (/Users/xujiashuang/Desktop/task-backend/app/controller/task.js:13:18)
+    at async /Users/xujiashuang/Desktop/task-backend/node_modules/_egg-development@2.7.0@egg-development/app/middleware/egg_loader_trace.js:9:50
+    at async xframe (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/lib/middlewares/xframe.js:7:5)
+    at async xssProtection (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/lib/middlewares/xssProtection.js:7:5)
+    at async nosniff (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/lib/middlewares/nosniff.js:8:5)
+    at async noopen (/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/lib/middlewares/noopen.js:8:5)
+    at async session (/Users/xujiashuang/Desktop/task-backend/node_modules/_koa-session@6.4.0@koa-session/index.js:41:7)
+    at async bodyParser (/Users/xujiashuang/Desktop/task-backend/node_modules/_koa-bodyparser@4.4.1@koa-bodyparser/index.js:78:5)
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+pid: 8172
+hostname: bogon
+
