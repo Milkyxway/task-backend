@@ -19,6 +19,7 @@ module.exports = (app) => {
 	router.post("/api/task/appeal", controller.task.appeal);
 	router.post("/api/task/mine", controller.task.myTask);
 	router.post("/api/subtask/add", controller.task.addChildTask);
+	router.post("/api/subtask/update", controller.task.updateSubTask);
 
 	router.post("/api/login", controller.role.login);
 	router.post("/api/modifypwd", controller.role.modifypwd);

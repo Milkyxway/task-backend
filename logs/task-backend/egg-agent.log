@@ -500,3 +500,229 @@
 2023-07-10 16:32:09,603 INFO 25294 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/xujiashuang/Desktop/task-backend/app/controller/task.js","stat":{"dev":16777233,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":17068259,"size":806,"blocks":8,"atimeMs":1688977929564.92,"mtimeMs":1688977929539.8086,"ctimeMs":1688977929539.8086,"birthtimeMs":1688627624305.9,"atime":"2023-07-10T08:32:09.565Z","mtime":"2023-07-10T08:32:09.540Z","ctime":"2023-07-10T08:32:09.540Z","birthtime":"2023-07-06T07:13:44.306Z"},"remove":false,"isDirectory":false,"isFile":true}
 2023-07-10 16:32:42,560 WARN 25294 [agent:development] reload worker because /Users/xujiashuang/Desktop/task-backend/app/service/task.js change
 2023-07-10 16:32:42,359 INFO 25294 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/xujiashuang/Desktop/task-backend/app/service/task.js","stat":{"dev":16777233,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":17068264,"size":1343,"blocks":8,"atimeMs":1688977962319.6829,"mtimeMs":1688977962296.3264,"ctimeMs":1688977962296.3264,"birthtimeMs":1688953559345.0166,"atime":"2023-07-10T08:32:42.320Z","mtime":"2023-07-10T08:32:42.296Z","ctime":"2023-07-10T08:32:42.296Z","birthtime":"2023-07-10T01:45:59.345Z"},"remove":false,"isDirectory":false,"isFile":true}
+2023-07-20 15:24:56,104 INFO 13660 [egg:logger] init all loggers with options: {"dir":"/Users/xujiashuang/Desktop/task-backend/logs/task-backend","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"task-backend-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"enablePerformanceTimer":false,"enableFastContextLogger":false,"type":"agent","localStorage":{"enabled":false}}
+2023-07-20 15:24:56,107 INFO 13660 [egg:core] dump config after load, 2ms
+2023-07-20 15:24:56,120 INFO 13660 [egg-watcher] Start watching: ["/Users/xujiashuang/Desktop/task-backend/app","/Users/xujiashuang/Desktop/task-backend/config","/Users/xujiashuang/Desktop/task-backend/mocks","/Users/xujiashuang/Desktop/task-backend/mocks_proxy","/Users/xujiashuang/Desktop/task-backend/app.js"]
+2023-07-20 15:24:56,120 INFO 13660 [egg-watcher] Start watching: "/Users/xujiashuang/Desktop/task-backend/app"
+2023-07-20 15:24:56,121 INFO 13660 [egg-watcher] Start watching: "/Users/xujiashuang/Desktop/task-backend/config"
+2023-07-20 15:24:56,121 INFO 13660 [egg-watcher] Start watching: "/Users/xujiashuang/Desktop/task-backend/mocks"
+2023-07-20 15:24:56,121 INFO 13660 [egg-watcher] Start watching: "/Users/xujiashuang/Desktop/task-backend/mocks_proxy"
+2023-07-20 15:24:56,121 INFO 13660 [egg-watcher] Start watching: "/Users/xujiashuang/Desktop/task-backend/app.js"
+2023-07-20 15:24:56,121 INFO 13660 [egg-watcher:agent] watcher start success
+2023-07-20 15:24:56,147 INFO 13660 egg start timeline:
+▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [649ms] - #0 Process Start
+                                          ▇▇▇▇▇▇▇ [109ms] - #1 Application Start
+                                          ▇ [3ms] - #2 Load Plugin
+                                           ▇ [5ms] - #3 Load Config
+                                           ▇ [0ms] - #4 Require(0) config/config.default.js
+                                           ▇ [1ms] - #5 Require(1) node_modules/_egg-session@3.3.0@egg-session/config/config.default.js
+                                           ▇ [0ms] - #6 Require(2) node_modules/_egg-security@3.0.0@egg-security/config/config.default.js
+                                           ▇ [0ms] - #7 Require(3) node_modules/_egg-jsonp@2.0.0@egg-jsonp/config/config.default.js
+                                           ▇ [0ms] - #8 Require(4) node_modules/_egg-onerror@2.2.0@egg-onerror/config/config.default.js
+                                           ▇ [1ms] - #9 Require(5) node_modules/_egg-i18n@2.1.1@egg-i18n/config/config.default.js
+                                           ▇ [0ms] - #10 Require(6) node_modules/_egg-watcher@3.1.1@egg-watcher/config/config.default.js
+                                           ▇ [0ms] - #11 Require(7) node_modules/_egg-schedule@4.0.0@egg-schedule/config/config.default.js
+                                           ▇ [0ms] - #12 Require(8) node_modules/_egg-multipart@3.3.0@egg-multipart/config/config.default.js
+                                           ▇ [0ms] - #13 Require(9) node_modules/_egg-development@2.7.0@egg-development/config/config.default.js
+                                           ▇ [0ms] - #14 Require(10) node_modules/_egg-logrotator@3.1.0@egg-logrotator/config/config.default.js
+                                           ▇ [1ms] - #15 Require(11) node_modules/_egg-static@2.3.1@egg-static/config/config.default.js
+                                           ▇ [0ms] - #16 Require(12) node_modules/_egg-view@2.1.4@egg-view/config/config.default.js
+                                           ▇ [0ms] - #17 Require(13) node_modules/_egg-mysql@4.0.0@egg-mysql/config/config.default.js
+                                           ▇ [0ms] - #18 Require(14) node_modules/_egg-cors@2.2.3@egg-cors/config/config.default.js
+                                           ▇ [0ms] - #19 Require(15) node_modules/_egg@3.17.3@egg/config/config.default.js
+                                           ▇ [0ms] - #20 Require(16) config/config.default.js
+                                           ▇ [0ms] - #21 Require(17) node_modules/_egg-security@3.0.0@egg-security/config/config.local.js
+                                           ▇ [0ms] - #22 Require(18) node_modules/_egg-watcher@3.1.1@egg-watcher/config/config.local.js
+                                           ▇ [0ms] - #23 Require(19) node_modules/_egg-view@2.1.4@egg-view/config/config.local.js
+                                           ▇ [0ms] - #24 Require(20) node_modules/_egg@3.17.3@egg/config/config.local.js
+                                           ▇ [24ms] - #25 Load extend/agent.js
+                                           ▇ [0ms] - #26 Require(21) node_modules/_egg-security@3.0.0@egg-security/app/extend/agent.js
+                                           ▇ [22ms] - #27 Require(22) node_modules/_egg-schedule@4.0.0@egg-schedule/app/extend/agent.js
+                                             ▇ [1ms] - #28 Require(23) node_modules/_egg-logrotator@3.1.0@egg-logrotator/app/extend/agent.js
+                                             ▇ [11ms] - #29 Load extend/context.js
+                                             ▇ [4ms] - #30 Require(24) node_modules/_egg-security@3.0.0@egg-security/app/extend/context.js
+                                             ▇ [1ms] - #31 Require(25) node_modules/_egg-jsonp@2.0.0@egg-jsonp/app/extend/context.js
+                                             ▇ [0ms] - #32 Require(26) node_modules/_egg-i18n@2.1.1@egg-i18n/app/extend/context.js
+                                             ▇ [5ms] - #33 Require(27) node_modules/_egg-multipart@3.3.0@egg-multipart/app/extend/context.js
+                                             ▇ [0ms] - #34 Require(28) node_modules/_egg-view@2.1.4@egg-view/app/extend/context.js
+                                             ▇ [0ms] - #35 Require(29) node_modules/_egg@3.17.3@egg/app/extend/context.js
+                                             ▇ [0ms] - #36 Require(30) app/extend/context.js
+                                             ▇ [18ms] - #37 Load agent.js
+                                             ▇ [0ms] - #38 Require(31) node_modules/_egg-security@3.0.0@egg-security/agent.js
+                                             ▇ [0ms] - #39 Require(32) node_modules/_egg-onerror@2.2.0@egg-onerror/agent.js
+                                             ▇ [1ms] - #40 Require(33) node_modules/_egg-watcher@3.1.1@egg-watcher/agent.js
+                                             ▇ [1ms] - #41 Require(34) node_modules/_egg-schedule@4.0.0@egg-schedule/agent.js
+                                             ▇ [12ms] - #42 Require(35) node_modules/_egg-development@2.7.0@egg-development/agent.js
+                                              ▇ [1ms] - #43 Require(36) node_modules/_egg-logrotator@3.1.0@egg-logrotator/agent.js
+                                              ▇ [3ms] - #44 Require(37) node_modules/_egg-mysql@4.0.0@egg-mysql/agent.js
+                                               ▇ [0ms] - #45 Require(38) node_modules/_egg@3.17.3@egg/agent.js
+                                               ▇ [16ms] - #46 Before Start in node_modules/_egg-watcher@3.1.1@egg-watcher/lib/init.js:15:14
+                                               ▇ [11ms] - #47 Before Start in node_modules/_egg-schedule@4.0.0@egg-schedule/agent.js:12:9
+                                               ▇▇ [39ms] - #48 Before Start in node_modules/_egg-development@2.7.0@egg-development/agent.js:12:9
+2023-07-20 15:24:56,147 INFO 13660 [egg:core] dump config after ready, 3ms
+2023-07-20 15:27:27,992 WARN 13660 [agent:development] reload worker because /Users/xujiashuang/Desktop/task-backend/app/schedule/checkTaskStatus.js change
+2023-07-20 15:27:27,788 INFO 13660 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/xujiashuang/Desktop/task-backend/app/schedule/checkTaskStatus.js","stat":{"dev":16777231,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":17880149,"size":834,"blocks":8,"atimeMs":1689838047738.904,"mtimeMs":1689838047725.3733,"ctimeMs":1689838047725.3733,"birthtimeMs":1689815555846.319,"atime":"2023-07-20T07:27:27.739Z","mtime":"2023-07-20T07:27:27.725Z","ctime":"2023-07-20T07:27:27.725Z","birthtime":"2023-07-20T01:12:35.846Z"},"remove":false,"isDirectory":false,"isFile":true}
+2023-07-20 15:27:31,266 INFO 13660 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/xujiashuang/Desktop/task-backend/app/schedule/checkTaskStatus.js","stat":{"dev":16777231,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":17880149,"size":804,"blocks":8,"atimeMs":1689838051265.837,"mtimeMs":1689838051254.7327,"ctimeMs":1689838051254.7327,"birthtimeMs":1689815555846.319,"atime":"2023-07-20T07:27:31.266Z","mtime":"2023-07-20T07:27:31.255Z","ctime":"2023-07-20T07:27:31.255Z","birthtime":"2023-07-20T01:12:35.846Z"},"remove":false,"isDirectory":false,"isFile":true}
+2023-07-20 15:27:31,468 WARN 13660 [agent:development] reload worker because /Users/xujiashuang/Desktop/task-backend/app/schedule/checkTaskStatus.js change
+2023-07-20 15:28:04,101 WARN 13660 [agent:development] reload worker because /Users/xujiashuang/Desktop/task-backend/app/service/task.js change
+2023-07-20 15:28:03,898 INFO 13660 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/xujiashuang/Desktop/task-backend/app/service/task.js","stat":{"dev":16777231,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":17880151,"size":6227,"blocks":16,"atimeMs":1689838083882.297,"mtimeMs":1689838083835.5608,"ctimeMs":1689838083835.5608,"birthtimeMs":1689815555846.6707,"atime":"2023-07-20T07:28:03.882Z","mtime":"2023-07-20T07:28:03.836Z","ctime":"2023-07-20T07:28:03.836Z","birthtime":"2023-07-20T01:12:35.847Z"},"remove":false,"isDirectory":false,"isFile":true}
+2023-07-20 15:28:31,747 WARN 13660 [agent:development] reload worker because /Users/xujiashuang/Desktop/task-backend/app/service/task.js change
+2023-07-20 15:28:31,547 INFO 13660 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/xujiashuang/Desktop/task-backend/app/service/task.js","stat":{"dev":16777231,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":17880151,"size":6251,"blocks":16,"atimeMs":1689838111508.0557,"mtimeMs":1689838111484.4177,"ctimeMs":1689838111484.4177,"birthtimeMs":1689815555846.6707,"atime":"2023-07-20T07:28:31.508Z","mtime":"2023-07-20T07:28:31.484Z","ctime":"2023-07-20T07:28:31.484Z","birthtime":"2023-07-20T01:12:35.847Z"},"remove":false,"isDirectory":false,"isFile":true}
+2023-07-20 15:29:09,073 WARN 13660 [agent:development] reload worker because /Users/xujiashuang/Desktop/task-backend/app/service/task.js change
+2023-07-20 15:29:08,872 INFO 13660 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/xujiashuang/Desktop/task-backend/app/service/task.js","stat":{"dev":16777231,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":17880151,"size":6160,"blocks":16,"atimeMs":1689838148821.0356,"mtimeMs":1689838148809.9417,"ctimeMs":1689838148809.9417,"birthtimeMs":1689815555846.6707,"atime":"2023-07-20T07:29:08.821Z","mtime":"2023-07-20T07:29:08.810Z","ctime":"2023-07-20T07:29:08.810Z","birthtime":"2023-07-20T01:12:35.847Z"},"remove":false,"isDirectory":false,"isFile":true}
+2023-07-20 15:29:13,282 WARN 13660 [agent:development] reload worker because /Users/xujiashuang/Desktop/task-backend/app/service/task.js change
+2023-07-20 15:29:13,080 INFO 13660 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/xujiashuang/Desktop/task-backend/app/service/task.js","stat":{"dev":16777231,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":17880151,"size":6051,"blocks":16,"atimeMs":1689838151137.4292,"mtimeMs":1689838153068.359,"ctimeMs":1689838153068.359,"birthtimeMs":1689815555846.6707,"atime":"2023-07-20T07:29:11.137Z","mtime":"2023-07-20T07:29:13.068Z","ctime":"2023-07-20T07:29:13.068Z","birthtime":"2023-07-20T01:12:35.847Z"},"remove":false,"isDirectory":false,"isFile":true}
+2023-07-20 15:35:55,744 ERROR 13660 nodejs.ClusterClientNoResponseError: client no response in 162926ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/xujiashuang/Desktop/task-backend/node_modules/_cluster-client@3.4.1@cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:564:17)
+    at process.processTimers (node:internal/timers:507:7)
+name: "ClusterClientNoResponseError"
+pid: 13660
+hostname: bogon
+
+2023-07-20 16:01:13,218 INFO 14129 [egg:logger] init all loggers with options: {"dir":"/Users/xujiashuang/Desktop/task-backend/logs/task-backend","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"task-backend-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"enablePerformanceTimer":false,"enableFastContextLogger":false,"type":"agent","localStorage":{"enabled":false}}
+2023-07-20 16:01:13,222 INFO 14129 [egg:core] dump config after load, 3ms
+2023-07-20 16:01:13,235 INFO 14129 [egg-watcher] Start watching: ["/Users/xujiashuang/Desktop/task-backend/app","/Users/xujiashuang/Desktop/task-backend/config","/Users/xujiashuang/Desktop/task-backend/mocks","/Users/xujiashuang/Desktop/task-backend/mocks_proxy","/Users/xujiashuang/Desktop/task-backend/app.js"]
+2023-07-20 16:01:13,236 INFO 14129 [egg-watcher] Start watching: "/Users/xujiashuang/Desktop/task-backend/app"
+2023-07-20 16:01:13,236 INFO 14129 [egg-watcher] Start watching: "/Users/xujiashuang/Desktop/task-backend/config"
+2023-07-20 16:01:13,236 INFO 14129 [egg-watcher] Start watching: "/Users/xujiashuang/Desktop/task-backend/mocks"
+2023-07-20 16:01:13,236 INFO 14129 [egg-watcher] Start watching: "/Users/xujiashuang/Desktop/task-backend/mocks_proxy"
+2023-07-20 16:01:13,236 INFO 14129 [egg-watcher] Start watching: "/Users/xujiashuang/Desktop/task-backend/app.js"
+2023-07-20 16:01:13,236 INFO 14129 [egg-watcher:agent] watcher start success
+2023-07-20 16:01:13,249 INFO 14129 egg start timeline:
+▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [663ms] - #0 Process Start
+                                           ▇▇▇▇▇▇ [99ms] - #1 Application Start
+                                           ▇ [3ms] - #2 Load Plugin
+                                           ▇ [6ms] - #3 Load Config
+                                           ▇ [0ms] - #4 Require(0) config/config.default.js
+                                           ▇ [0ms] - #5 Require(1) node_modules/_egg-session@3.3.0@egg-session/config/config.default.js
+                                           ▇ [0ms] - #6 Require(2) node_modules/_egg-security@3.0.0@egg-security/config/config.default.js
+                                           ▇ [0ms] - #7 Require(3) node_modules/_egg-jsonp@2.0.0@egg-jsonp/config/config.default.js
+                                           ▇ [0ms] - #8 Require(4) node_modules/_egg-onerror@2.2.0@egg-onerror/config/config.default.js
+                                           ▇ [0ms] - #9 Require(5) node_modules/_egg-i18n@2.1.1@egg-i18n/config/config.default.js
+                                           ▇ [0ms] - #10 Require(6) node_modules/_egg-watcher@3.1.1@egg-watcher/config/config.default.js
+                                           ▇ [0ms] - #11 Require(7) node_modules/_egg-schedule@4.0.0@egg-schedule/config/config.default.js
+                                           ▇ [1ms] - #12 Require(8) node_modules/_egg-multipart@3.3.0@egg-multipart/config/config.default.js
+                                            ▇ [0ms] - #13 Require(9) node_modules/_egg-development@2.7.0@egg-development/config/config.default.js
+                                            ▇ [0ms] - #14 Require(10) node_modules/_egg-logrotator@3.1.0@egg-logrotator/config/config.default.js
+                                            ▇ [0ms] - #15 Require(11) node_modules/_egg-static@2.3.1@egg-static/config/config.default.js
+                                            ▇ [0ms] - #16 Require(12) node_modules/_egg-view@2.1.4@egg-view/config/config.default.js
+                                            ▇ [0ms] - #17 Require(13) node_modules/_egg-mysql@4.0.0@egg-mysql/config/config.default.js
+                                            ▇ [1ms] - #18 Require(14) node_modules/_egg-cors@2.2.3@egg-cors/config/config.default.js
+                                            ▇ [0ms] - #19 Require(15) node_modules/_egg@3.17.3@egg/config/config.default.js
+                                            ▇ [0ms] - #20 Require(16) config/config.default.js
+                                            ▇ [0ms] - #21 Require(17) node_modules/_egg-security@3.0.0@egg-security/config/config.local.js
+                                            ▇ [0ms] - #22 Require(18) node_modules/_egg-watcher@3.1.1@egg-watcher/config/config.local.js
+                                            ▇ [1ms] - #23 Require(19) node_modules/_egg-view@2.1.4@egg-view/config/config.local.js
+                                            ▇ [0ms] - #24 Require(20) node_modules/_egg@3.17.3@egg/config/config.local.js
+                                            ▇ [24ms] - #25 Load extend/agent.js
+                                            ▇ [0ms] - #26 Require(21) node_modules/_egg-security@3.0.0@egg-security/app/extend/agent.js
+                                            ▇ [22ms] - #27 Require(22) node_modules/_egg-schedule@4.0.0@egg-schedule/app/extend/agent.js
+                                             ▇ [0ms] - #28 Require(23) node_modules/_egg-logrotator@3.1.0@egg-logrotator/app/extend/agent.js
+                                             ▇ [12ms] - #29 Load extend/context.js
+                                             ▇ [4ms] - #30 Require(24) node_modules/_egg-security@3.0.0@egg-security/app/extend/context.js
+                                              ▇ [1ms] - #31 Require(25) node_modules/_egg-jsonp@2.0.0@egg-jsonp/app/extend/context.js
+                                              ▇ [0ms] - #32 Require(26) node_modules/_egg-i18n@2.1.1@egg-i18n/app/extend/context.js
+                                              ▇ [4ms] - #33 Require(27) node_modules/_egg-multipart@3.3.0@egg-multipart/app/extend/context.js
+                                              ▇ [1ms] - #34 Require(28) node_modules/_egg-view@2.1.4@egg-view/app/extend/context.js
+                                              ▇ [0ms] - #35 Require(29) node_modules/_egg@3.17.3@egg/app/extend/context.js
+                                              ▇ [0ms] - #36 Require(30) app/extend/context.js
+                                              ▇ [19ms] - #37 Load agent.js
+                                              ▇ [1ms] - #38 Require(31) node_modules/_egg-security@3.0.0@egg-security/agent.js
+                                              ▇ [0ms] - #39 Require(32) node_modules/_egg-onerror@2.2.0@egg-onerror/agent.js
+                                              ▇ [1ms] - #40 Require(33) node_modules/_egg-watcher@3.1.1@egg-watcher/agent.js
+                                              ▇ [1ms] - #41 Require(34) node_modules/_egg-schedule@4.0.0@egg-schedule/agent.js
+                                              ▇ [11ms] - #42 Require(35) node_modules/_egg-development@2.7.0@egg-development/agent.js
+                                               ▇ [0ms] - #43 Require(36) node_modules/_egg-logrotator@3.1.0@egg-logrotator/agent.js
+                                               ▇ [4ms] - #44 Require(37) node_modules/_egg-mysql@4.0.0@egg-mysql/agent.js
+                                               ▇ [0ms] - #45 Require(38) node_modules/_egg@3.17.3@egg/agent.js
+                                                ▇ [17ms] - #46 Before Start in node_modules/_egg-watcher@3.1.1@egg-watcher/lib/init.js:15:14
+                                                ▇ [12ms] - #47 Before Start in node_modules/_egg-schedule@4.0.0@egg-schedule/agent.js:12:9
+                                                ▇ [28ms] - #48 Before Start in node_modules/_egg-development@2.7.0@egg-development/agent.js:12:9
+2023-07-20 16:01:13,249 INFO 14129 [egg:core] dump config after ready, 2ms
+2023-07-20 16:02:08,162 INFO 14129 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/xujiashuang/Desktop/task-backend/app/schedule/checkTaskStatus.js","stat":{"dev":16777231,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":17880149,"size":804,"blocks":8,"atimeMs":1689840128147.5083,"mtimeMs":1689840128097.7288,"ctimeMs":1689840128097.7288,"birthtimeMs":1689815555846.319,"atime":"2023-07-20T08:02:08.148Z","mtime":"2023-07-20T08:02:08.098Z","ctime":"2023-07-20T08:02:08.098Z","birthtime":"2023-07-20T01:12:35.846Z"},"remove":false,"isDirectory":false,"isFile":true}
+2023-07-20 16:02:08,365 WARN 14129 [agent:development] reload worker because /Users/xujiashuang/Desktop/task-backend/app/schedule/checkTaskStatus.js change
+2023-07-20 16:02:25,387 INFO 14207 [egg:logger] init all loggers with options: {"dir":"/Users/xujiashuang/Desktop/task-backend/logs/task-backend","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"task-backend-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"enablePerformanceTimer":false,"enableFastContextLogger":false,"type":"agent","localStorage":{"enabled":false}}
+2023-07-20 16:02:25,391 INFO 14207 [egg:core] dump config after load, 2ms
+2023-07-20 16:02:25,404 INFO 14207 [egg-watcher] Start watching: ["/Users/xujiashuang/Desktop/task-backend/app","/Users/xujiashuang/Desktop/task-backend/config","/Users/xujiashuang/Desktop/task-backend/mocks","/Users/xujiashuang/Desktop/task-backend/mocks_proxy","/Users/xujiashuang/Desktop/task-backend/app.js"]
+2023-07-20 16:02:25,404 INFO 14207 [egg-watcher] Start watching: "/Users/xujiashuang/Desktop/task-backend/app"
+2023-07-20 16:02:25,404 INFO 14207 [egg-watcher] Start watching: "/Users/xujiashuang/Desktop/task-backend/config"
+2023-07-20 16:02:25,404 INFO 14207 [egg-watcher] Start watching: "/Users/xujiashuang/Desktop/task-backend/mocks"
+2023-07-20 16:02:25,404 INFO 14207 [egg-watcher] Start watching: "/Users/xujiashuang/Desktop/task-backend/mocks_proxy"
+2023-07-20 16:02:25,404 INFO 14207 [egg-watcher] Start watching: "/Users/xujiashuang/Desktop/task-backend/app.js"
+2023-07-20 16:02:25,404 INFO 14207 [egg-watcher:agent] watcher start success
+2023-07-20 16:02:25,418 INFO 14207 egg start timeline:
+▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [634ms] - #0 Process Start
+                                           ▇▇▇▇▇▇ [92ms] - #1 Application Start
+                                           ▇ [3ms] - #2 Load Plugin
+                                            ▇ [5ms] - #3 Load Config
+                                            ▇ [0ms] - #4 Require(0) config/config.default.js
+                                            ▇ [0ms] - #5 Require(1) node_modules/_egg-session@3.3.0@egg-session/config/config.default.js
+                                            ▇ [0ms] - #6 Require(2) node_modules/_egg-security@3.0.0@egg-security/config/config.default.js
+                                            ▇ [0ms] - #7 Require(3) node_modules/_egg-jsonp@2.0.0@egg-jsonp/config/config.default.js
+                                            ▇ [1ms] - #8 Require(4) node_modules/_egg-onerror@2.2.0@egg-onerror/config/config.default.js
+                                            ▇ [0ms] - #9 Require(5) node_modules/_egg-i18n@2.1.1@egg-i18n/config/config.default.js
+                                            ▇ [0ms] - #10 Require(6) node_modules/_egg-watcher@3.1.1@egg-watcher/config/config.default.js
+                                            ▇ [0ms] - #11 Require(7) node_modules/_egg-schedule@4.0.0@egg-schedule/config/config.default.js
+                                            ▇ [0ms] - #12 Require(8) node_modules/_egg-multipart@3.3.0@egg-multipart/config/config.default.js
+                                            ▇ [0ms] - #13 Require(9) node_modules/_egg-development@2.7.0@egg-development/config/config.default.js
+                                            ▇ [1ms] - #14 Require(10) node_modules/_egg-logrotator@3.1.0@egg-logrotator/config/config.default.js
+                                            ▇ [0ms] - #15 Require(11) node_modules/_egg-static@2.3.1@egg-static/config/config.default.js
+                                            ▇ [0ms] - #16 Require(12) node_modules/_egg-view@2.1.4@egg-view/config/config.default.js
+                                            ▇ [0ms] - #17 Require(13) node_modules/_egg-mysql@4.0.0@egg-mysql/config/config.default.js
+                                            ▇ [0ms] - #18 Require(14) node_modules/_egg-cors@2.2.3@egg-cors/config/config.default.js
+                                            ▇ [0ms] - #19 Require(15) node_modules/_egg@3.17.3@egg/config/config.default.js
+                                            ▇ [0ms] - #20 Require(16) config/config.default.js
+                                            ▇ [1ms] - #21 Require(17) node_modules/_egg-security@3.0.0@egg-security/config/config.local.js
+                                            ▇ [0ms] - #22 Require(18) node_modules/_egg-watcher@3.1.1@egg-watcher/config/config.local.js
+                                            ▇ [0ms] - #23 Require(19) node_modules/_egg-view@2.1.4@egg-view/config/config.local.js
+                                            ▇ [0ms] - #24 Require(20) node_modules/_egg@3.17.3@egg/config/config.local.js
+                                            ▇ [19ms] - #25 Load extend/agent.js
+                                            ▇ [0ms] - #26 Require(21) node_modules/_egg-security@3.0.0@egg-security/app/extend/agent.js
+                                            ▇ [18ms] - #27 Require(22) node_modules/_egg-schedule@4.0.0@egg-schedule/app/extend/agent.js
+                                             ▇ [1ms] - #28 Require(23) node_modules/_egg-logrotator@3.1.0@egg-logrotator/app/extend/agent.js
+                                             ▇ [12ms] - #29 Load extend/context.js
+                                             ▇ [5ms] - #30 Require(24) node_modules/_egg-security@3.0.0@egg-security/app/extend/context.js
+                                              ▇ [1ms] - #31 Require(25) node_modules/_egg-jsonp@2.0.0@egg-jsonp/app/extend/context.js
+                                              ▇ [0ms] - #32 Require(26) node_modules/_egg-i18n@2.1.1@egg-i18n/app/extend/context.js
+                                              ▇ [5ms] - #33 Require(27) node_modules/_egg-multipart@3.3.0@egg-multipart/app/extend/context.js
+                                              ▇ [0ms] - #34 Require(28) node_modules/_egg-view@2.1.4@egg-view/app/extend/context.js
+                                              ▇ [1ms] - #35 Require(29) node_modules/_egg@3.17.3@egg/app/extend/context.js
+                                              ▇ [0ms] - #36 Require(30) app/extend/context.js
+                                              ▇ [18ms] - #37 Load agent.js
+                                              ▇ [0ms] - #38 Require(31) node_modules/_egg-security@3.0.0@egg-security/agent.js
+                                              ▇ [0ms] - #39 Require(32) node_modules/_egg-onerror@2.2.0@egg-onerror/agent.js
+                                              ▇ [1ms] - #40 Require(33) node_modules/_egg-watcher@3.1.1@egg-watcher/agent.js
+                                              ▇ [1ms] - #41 Require(34) node_modules/_egg-schedule@4.0.0@egg-schedule/agent.js
+                                              ▇ [10ms] - #42 Require(35) node_modules/_egg-development@2.7.0@egg-development/agent.js
+                                               ▇ [0ms] - #43 Require(36) node_modules/_egg-logrotator@3.1.0@egg-logrotator/agent.js
+                                               ▇ [4ms] - #44 Require(37) node_modules/_egg-mysql@4.0.0@egg-mysql/agent.js
+                                               ▇ [1ms] - #45 Require(38) node_modules/_egg@3.17.3@egg/agent.js
+                                               ▇ [16ms] - #46 Before Start in node_modules/_egg-watcher@3.1.1@egg-watcher/lib/init.js:15:14
+                                               ▇ [12ms] - #47 Before Start in node_modules/_egg-schedule@4.0.0@egg-schedule/agent.js:12:9
+                                               ▇ [27ms] - #48 Before Start in node_modules/_egg-development@2.7.0@egg-development/agent.js:12:9
+2023-07-20 16:02:25,418 INFO 14207 [egg:core] dump config after ready, 2ms
+2023-07-20 16:03:42,292 INFO 14207 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/xujiashuang/Desktop/task-backend/app/schedule/checkTaskStatus.js","stat":{"dev":16777231,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":17880149,"size":829,"blocks":8,"atimeMs":1689840222237.9182,"mtimeMs":1689840222229.7434,"ctimeMs":1689840222229.7434,"birthtimeMs":1689815555846.319,"atime":"2023-07-20T08:03:42.238Z","mtime":"2023-07-20T08:03:42.230Z","ctime":"2023-07-20T08:03:42.230Z","birthtime":"2023-07-20T01:12:35.846Z"},"remove":false,"isDirectory":false,"isFile":true}
+2023-07-20 16:03:42,496 WARN 14207 [agent:development] reload worker because /Users/xujiashuang/Desktop/task-backend/app/schedule/checkTaskStatus.js change
+2023-07-20 16:04:05,857 WARN 14207 [agent:development] reload worker because /Users/xujiashuang/Desktop/task-backend/app/schedule/checkTaskStatus.js change
+2023-07-20 16:04:05,655 INFO 14207 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/xujiashuang/Desktop/task-backend/app/schedule/checkTaskStatus.js","stat":{"dev":16777231,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":17880149,"size":824,"blocks":8,"atimeMs":1689840245617.817,"mtimeMs":1689840245592.7588,"ctimeMs":1689840245592.7588,"birthtimeMs":1689815555846.319,"atime":"2023-07-20T08:04:05.618Z","mtime":"2023-07-20T08:04:05.593Z","ctime":"2023-07-20T08:04:05.593Z","birthtime":"2023-07-20T01:12:35.846Z"},"remove":false,"isDirectory":false,"isFile":true}
+2023-07-20 16:06:21,302 WARN 14207 [agent:development] reload worker because /Users/xujiashuang/Desktop/task-backend/app/schedule/checkTaskStatus.js change
+2023-07-20 16:06:21,101 INFO 14207 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/xujiashuang/Desktop/task-backend/app/schedule/checkTaskStatus.js","stat":{"dev":16777231,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":17880149,"size":776,"blocks":8,"atimeMs":1689840381053.639,"mtimeMs":1689840381038.376,"ctimeMs":1689840381038.376,"birthtimeMs":1689815555846.319,"atime":"2023-07-20T08:06:21.054Z","mtime":"2023-07-20T08:06:21.038Z","ctime":"2023-07-20T08:06:21.038Z","birthtime":"2023-07-20T01:12:35.846Z"},"remove":false,"isDirectory":false,"isFile":true}
+2023-07-20 16:09:30,471 WARN 14207 [agent:development] reload worker because /Users/xujiashuang/Desktop/task-backend/app/schedule/checkTaskStatus.js change
+2023-07-20 16:09:30,268 INFO 14207 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/xujiashuang/Desktop/task-backend/app/schedule/checkTaskStatus.js","stat":{"dev":16777231,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":17880149,"size":1147,"blocks":8,"atimeMs":1689840570220.6946,"mtimeMs":1689840570205.9587,"ctimeMs":1689840570205.9587,"birthtimeMs":1689815555846.319,"atime":"2023-07-20T08:09:30.221Z","mtime":"2023-07-20T08:09:30.206Z","ctime":"2023-07-20T08:09:30.206Z","birthtime":"2023-07-20T01:12:35.846Z"},"remove":false,"isDirectory":false,"isFile":true}
+2023-07-20 16:49:29,399 ERROR 14207 nodejs.ClusterClientNoResponseError: client no response in 62011ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/xujiashuang/Desktop/task-backend/node_modules/_cluster-client@3.4.1@cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:564:17)
+    at process.processTimers (node:internal/timers:507:7)
+name: "ClusterClientNoResponseError"
+pid: 14207
+hostname: bogon
+
+2023-07-20 16:59:15,400 ERROR 14207 nodejs.ClusterClientNoResponseError: client no response in 165972ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/xujiashuang/Desktop/task-backend/node_modules/_cluster-client@3.4.1@cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:564:17)
+    at process.processTimers (node:internal/timers:507:7)
+name: "ClusterClientNoResponseError"
+pid: 14207
+hostname: bogon
+

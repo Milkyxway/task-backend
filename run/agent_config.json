@@ -204,6 +204,7 @@
         "declarations": true
       },
       "dependencies": {
+        "dayjs": "^1.11.9",
         "egg": "^3",
         "egg-cors": "^2.2.3",
         "egg-mysql": "^4.0.0",
@@ -542,6 +543,7 @@
         "declarations": true
       },
       "dependencies": {
+        "dayjs": "^1.11.9",
         "egg": "^3",
         "egg-cors": "^2.2.3",
         "egg-mysql": "^4.0.0",

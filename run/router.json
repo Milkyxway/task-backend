@@ -126,6 +126,18 @@
       "POST"
     ],
     "paramNames": [],
+    "path": "/api/subtask/update",
+    "regexp": "/^\\/api\\/subtask\\/update(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
     "path": "/api/login",
     "regexp": "/^\\/api\\/login(?:\\/(?=$))?$/",
     "stack": [

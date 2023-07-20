@@ -255,6 +255,20 @@ class TaskService extends Service {
 		this.updateTaskStatus(query.taskId, 3); // 任务拆分即进入进行中
 	}
 
+	async updateSubTask(query) {
+		let count = 0;
+		const { taskId, list } = query;
+		list.map(async (i) => {
+			await this.app.mysql.update("subtask_list", i, {
+				where: { subtaskId: i.subtaskId },
+			});
+			count++;
+			if (count === list.length - 1) {
+				this.updateTaskStatus(taskId, 3);
+			}
+		});
+	}
+
 	async selectByCondition(options = {}, tableName = "task_list") {
 		const list = await this.app.mysql.select(tableName, options);
 		return list;
