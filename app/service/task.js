@@ -150,6 +150,10 @@ class TaskService extends Service {
 		}
 	}
 
+	/**
+	 * 子任务置为完成
+	 * @param {*} query
+	 */
 	async subTaskSetFinish(query) {
 		// 操作的是子任务 每一条子任务修改状态 所有子任务都完成后把父任务置为完成
 		await this.app.mysql.update(
@@ -172,6 +176,10 @@ class TaskService extends Service {
 		}
 	}
 
+	/**
+	 * 父任务置为完成
+	 * @param {*} query
+	 */
 	async setMainTaskFinish(query) {
 		await this.updateTaskStatus(query.taskId, 4);
 		if (query.children.length) {
@@ -266,8 +274,19 @@ class TaskService extends Service {
 	}
 
 	async addChildTask(query) {
-		await this.app.mysql.insert("subtask_list", query.list);
-		this.updateTaskStatus(query.taskId, 3); // 任务拆分即进入进行中
+		const { list, taskId } = query;
+		const last = list.length - 1;
+		await this.app.mysql.insert("subtask_list", list);
+		await this.app.mysql.update(
+			"task_list",
+			{
+				updateTime: new Date(),
+				status: 3,
+				finishTime: list[last].finishTime,
+			},
+			{ where: { taskId } }
+		);
+		// this.updateTaskStatus(query.taskId, 3); // 任务拆分即进入进行中
 	}
 
 	async updateSubTask(query) {
