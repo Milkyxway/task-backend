@@ -17,12 +17,8 @@ class TaskService extends Service {
 
 	// 获取任务列表
 	async getTasksByQuery(params) {
-		const {
-			app: { mysql },
-		} = this;
 		const { pageNum, pageSize, keyword, assistOrg, createTime, ...rest } =
 			params;
-
 		let notEmptyParams = {};
 		let whereStr = "";
 		Object.keys(rest).map((i) => {
@@ -37,48 +33,37 @@ class TaskService extends Service {
 				whereStr = `WHERE ${i} = '${notEmptyParams[i]}'`;
 			}
 		});
+		const commonSql = (key, val) => {
+			return this.isEmptyObj(notEmptyParams)
+				? `where ${key} like '%${val}%'`
+				: `${whereStr} and ${key} like '%${val}%'`;
+		};
 
-		if (keyword) {
-			const list = await mysql.query(
-				`select * from task_list where taskContent like '%${keyword}%'`
-			);
-			const [{ "COUNT(*)": total }] = await this.app.mysql.query(
-				`select COUNT(*) from task_list where taskContent like '%${keyword}'`
-			);
-			return this.setData(list).then((res) => {
-				return {
-					list,
-					total,
-				};
-			});
-		} else {
-			if (assistOrg) {
-				whereStr = this.isEmptyObj(notEmptyParams)
-					? `where assistOrg like '%${assistOrg}%'`
-					: `${whereStr} and assistOrg like '%${assistOrg}%'`;
-			}
-			if (createTime) {
-				whereStr = this.isEmptyObj(notEmptyParams)
-					? `where createTime like '%${createTime}%'`
-					: `${whereStr} and createTime like '%${createTime}%'`;
-			}
-
-			let list = await this.app.mysql.query(
-				`select * from task_list ${whereStr} order by updateTime desc limit ${
-					pageNum * pageSize
-				},${pageSize}`
-			);
-
-			const [{ "COUNT(*)": total }] = await this.app.mysql.query(
-				`SELECT COUNT(*) from task_list ${whereStr}`
-			);
-			return this.setData(list).then((res) => {
-				return {
-					total,
-					list,
-				};
-			});
+		if (assistOrg) {
+			whereStr = commonSql("assistOrg", assistOrg);
 		}
+		if (createTime) {
+			whereStr = commonSql("createTime", createTime);
+		}
+		if (keyword) {
+			whereStr = commonSql("keyword", keyword);
+		}
+
+		let list = await this.app.mysql.query(
+			`select * from task_list ${whereStr} order by updateTime desc limit ${
+				pageNum * pageSize
+			},${pageSize}`
+		);
+
+		const [{ "COUNT(*)": total }] = await this.app.mysql.query(
+			`SELECT COUNT(*) from task_list ${whereStr}`
+		);
+		return this.setData(list).then((res) => {
+			return {
+				total,
+				list,
+			};
+		});
 	}
 
 	setData = (list) => {
