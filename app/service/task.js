@@ -46,7 +46,7 @@ class TaskService extends Service {
 			whereStr = commonSql("createTime", createTime);
 		}
 		if (keyword) {
-			whereStr = commonSql("keyword", keyword);
+			whereStr = commonSql("taskContent", keyword);
 		}
 
 		let list = await this.app.mysql.query(
