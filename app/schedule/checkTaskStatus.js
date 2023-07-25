@@ -6,8 +6,8 @@ const dayjs = require("dayjs");
 class logTime extends Subscription {
 	static get schedule() {
 		return {
-			// cron: "0 0 16 * * ?",
-			interval: "30s",
+			cron: "0 0 16 * * ?",
+			// interval: "30s",
 			type: "worker",
 		};
 	}

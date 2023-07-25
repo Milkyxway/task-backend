@@ -15,6 +15,39 @@ class TaskService extends Service {
 		return true;
 	}
 
+	handleQueryToSqlStr(rest, assistOrg, createTime, keyword) {
+		let notEmptyParams = {};
+		let whereStr = "";
+		Object.keys(rest).map((i) => {
+			if (rest[i] !== null) {
+				notEmptyParams[i] = rest[i];
+			}
+		});
+		Object.keys(notEmptyParams).map((i, index) => {
+			if (index !== 0) {
+				whereStr = whereStr + ` && ${i} = '${notEmptyParams[i]}'`;
+			} else {
+				whereStr = `WHERE ${i} = '${notEmptyParams[i]}'`;
+			}
+		});
+		const commonSql = (key, val) => {
+			return this.isEmptyObj(notEmptyParams)
+				? `where ${key} like '%${val}%'`
+				: `${whereStr} and ${key} like '%${val}%'`;
+		};
+
+		if (assistOrg) {
+			whereStr = commonSql("assistOrg", assistOrg);
+		}
+		if (createTime) {
+			whereStr = commonSql("createTime", createTime);
+		}
+		if (keyword) {
+			whereStr = commonSql("taskContent", keyword);
+		}
+		return whereStr;
+	}
+
 	// 获取任务列表
 	async getTasksByQuery(params) {
 		const { pageNum, pageSize, keyword, assistOrg, createTime, ...rest } =
@@ -213,24 +246,24 @@ class TaskService extends Service {
 	/**
 	 * 设置任务状态为已延期
 	 */
-	setTaskDelay() {
-		const list = this.selectByCondition({ where: { status: 3 } });
-		const delayTask = list.filter((i) => i.finishTime < new Date());
-		if (delayTask.length) {
-			delayTask.map(async (i) => {
-				await this.app.mysql.update(
-					"subtask_list",
-					{ status: 5 },
-					{ where: { subtaskId: i.subtaskId } }
-				);
-				await this.app.mysql.update(
-					"task_list",
-					{ status: 5 },
-					{ where: { taskId: i.parentId } }
-				);
-			});
-		}
-	}
+	// setTaskDelay() {
+	// 	const list = this.selectByCondition({ where: { status: 3 } });
+	// 	const delayTask = list.filter((i) => i.finishTime < new Date());
+	// 	if (delayTask.length) {
+	// 		delayTask.map(async (i) => {
+	// 			await this.app.mysql.update(
+	// 				"subtask_list",
+	// 				{ status: 5 },
+	// 				{ where: { subtaskId: i.subtaskId } }
+	// 			);
+	// 			await this.app.mysql.update(
+	// 				"task_list",
+	// 				{ status: 5 },
+	// 				{ where: { taskId: i.parentId } }
+	// 			);
+	// 		});
+	// 	}
+	// }
 
 	async updateTaskStatus(taskId, status) {
 		await this.app.mysql.update(
@@ -254,7 +287,22 @@ class TaskService extends Service {
 	 * @returns
 	 */
 	async queryMyTask(query) {
-		const { orgnizationId, pageNum, pageSize } = query;
+		const {
+			orgnizationId,
+			pageNum,
+			pageSize,
+			assistOrg,
+			createTime,
+			keyword,
+			...rest
+		} = query;
+		let whereStr = this.handleQueryToSqlStr(
+			rest,
+			assistOrg,
+			createTime,
+			keyword
+		);
+		console.log(whereStr);
 		let sqlList = `SELECT * from task_list where leadOrg = ${
 			query.orgnizationId
 		} or assistOrg like '%${
@@ -289,18 +337,34 @@ class TaskService extends Service {
 		// this.updateTaskStatus(query.taskId, 3); // 任务拆分即进入进行中
 	}
 
+	// async updateSubTask(query) {
+	// 	let count = 0;
+	// 	const { taskId, list } = query;
+	// 	console.log(list);
+	// 	list.map(async (i) => {
+	// 		await this.app.mysql.update("subtask_list", i, {
+	// 			where: { subtaskId: i.subtaskId },
+	// 		});
+	// 		count++;
+	// 		if (count === list.length - 1) {
+	// 			this.updateTaskStatus(taskId, 3);
+	// 		}
+	// 	});
+	// }
+
 	async updateSubTask(query) {
-		let count = 0;
-		const { taskId, list } = query;
-		list.map(async (i) => {
-			await this.app.mysql.update("subtask_list", i, {
-				where: { subtaskId: i.subtaskId },
-			});
-			count++;
-			if (count === list.length - 1) {
-				this.updateTaskStatus(taskId, 3);
-			}
+		await this.app.mysql.update("subtask_list", query, {
+			where: { subtaskId: query.subtaskId },
 		});
+		const list = await this.app.mysql.select("subtask_list", {
+			where: { parentId: query.parentId },
+		});
+		const statusSubmitList = await this.app.mysql.select("subtask_list", {
+			where: { parentId: query.parentId, status: 6 },
+		});
+		if (list.length === statusSubmitList.length) {
+			this.updateTaskStatus(query.parentId, 6);
+		}
 	}
 
 	async selectByCondition(options = {}, tableName = "task_list") {
