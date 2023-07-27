@@ -20,23 +20,22 @@ module.exports = (appInfo) => {
 	config.mysql = {
 		// database configuration
 		client: {
-			// host
 			host: "localhost",
 			// port
 			port: "3306",
 			// username
-			user: "root",
+			user: "htgl",
 			// password
-			password: "11111111",
+			password: "m7Dj6XHreejRBkDk",
 			// database
-			database: "task_supervise_schema",
+			database: "task_base",
 		},
 	};
 	// 前端端口，跟随实际情况修改
 	const port = 9001;
 	const domainWhiteList = [
 		...new Set([
-			`http://127.0.0.1:${port}`,
+			`http://172.16.179.5:${port}`,
 			`http://localhost:${port}`,
 			// 服务启动时尝试自动获取本机 IP 设置白名单
 			// `http://${getLocalhost()}:${port}`,

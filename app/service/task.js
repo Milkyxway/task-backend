@@ -244,27 +244,10 @@ class TaskService extends Service {
 	}
 
 	/**
-	 * 设置任务状态为已延期
+	 * 更新任务
+	 * @param {*} taskId
+	 * @param {*} status
 	 */
-	// setTaskDelay() {
-	// 	const list = this.selectByCondition({ where: { status: 3 } });
-	// 	const delayTask = list.filter((i) => i.finishTime < new Date());
-	// 	if (delayTask.length) {
-	// 		delayTask.map(async (i) => {
-	// 			await this.app.mysql.update(
-	// 				"subtask_list",
-	// 				{ status: 5 },
-	// 				{ where: { subtaskId: i.subtaskId } }
-	// 			);
-	// 			await this.app.mysql.update(
-	// 				"task_list",
-	// 				{ status: 5 },
-	// 				{ where: { taskId: i.parentId } }
-	// 			);
-	// 		});
-	// 	}
-	// }
-
 	async updateTaskStatus(taskId, status) {
 		await this.app.mysql.update(
 			"task_list",
@@ -302,13 +285,15 @@ class TaskService extends Service {
 			createTime,
 			keyword
 		);
-		console.log(whereStr);
-		let sqlList = `SELECT * from task_list where leadOrg = ${
-			query.orgnizationId
-		} or assistOrg like '%${
-			query.orgnizationId
-		}%' order by updateTime desc limit ${pageNum * pageSize},${pageSize}`;
-		let sqlTotal = `SELECT COUNT(*) from task_list where leadOrg = ${orgnizationId} or assistOrg like '%${orgnizationId}%'`;
+		if (whereStr) {
+			whereStr = `${whereStr} and leadOrg = ${query.orgnizationId} or assistOrg like '%${query.orgnizationId}%'`;
+		} else {
+			whereStr = `where leadOrg = ${query.orgnizationId} or assistOrg like '%${query.orgnizationId}%'`;
+		}
+		let sqlList = `SELECT * from task_list ${whereStr}  order by updateTime desc limit ${
+			pageNum * pageSize
+		},${pageSize}`;
+		let sqlTotal = `SELECT COUNT(*) from task_list ${whereStr}`;
 
 		const list = await this.app.mysql.query(sqlList);
 		const [{ "COUNT(*)": total }] = await this.app.mysql.query(sqlTotal);
@@ -353,17 +338,26 @@ class TaskService extends Service {
 	// }
 
 	async updateSubTask(query) {
+		const { subtaskId, parentId, status } = query;
 		await this.app.mysql.update("subtask_list", query, {
-			where: { subtaskId: query.subtaskId },
+			where: { subtaskId },
 		});
-		const list = await this.app.mysql.select("subtask_list", {
-			where: { parentId: query.parentId },
-		});
-		const statusSubmitList = await this.app.mysql.select("subtask_list", {
-			where: { parentId: query.parentId, status: 6 },
-		});
-		if (list.length === statusSubmitList.length) {
-			this.updateTaskStatus(query.parentId, 6);
+
+		if ([6, 7].includes(status)) {
+			const list = await this.app.mysql.select("subtask_list", {
+				where: { parentId },
+			});
+			const statusLinkageList = await this.app.mysql.select("subtask_list", {
+				where: { parentId, status },
+			});
+			if (list.length === statusLinkageList.length) {
+				this.updateTaskStatus(parentId, status);
+			}
+			if (
+				list.filter((i) => [3, 7].includes(i.status)).length === list.length
+			) {
+				this.updateTaskStatus(parentId, 3);
+			}
 		}
 	}
 
