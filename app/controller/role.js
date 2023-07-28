@@ -26,11 +26,16 @@ class RoleController extends Controller {
 			return ctx.sendError(e);
 		}
 	}
-	async update() {}
 
-	async add() {}
-
-	async delete() {}
+	async createaccount() {
+		const { ctx, service } = this;
+		try {
+			const result = await service.role.createAccount(ctx.request.body);
+			return ctx.sendSuccess(result);
+		} catch (e) {
+			return ctx.sendError(e);
+		}
+	}
 }
 
 module.exports = RoleController;

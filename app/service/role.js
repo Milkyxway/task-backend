@@ -61,6 +61,14 @@ class RoleService extends Service {
 			}
 		});
 	}
+
+	/**
+	 * 创建账户
+	 * @param {*} query
+	 */
+	async createAccount(query) {
+		await this.app.mysql.insert("user", query);
+	}
 }
 
 module.exports = RoleService;
