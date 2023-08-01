@@ -261,7 +261,16 @@ class TaskService extends Service {
 	 * @param {*} query
 	 */
 	async appeal(query) {
-		this.updateTaskStatus(query.taskId, 2);
+		return new Promise(async (resolve, reject) => {
+			try {
+				await this.app.mysql.update("task_list", query, {
+					where: { taskId: query.taskId },
+				});
+				resolve();
+			} catch (e) {
+				reject(e);
+			}
+		});
 	}
 
 	/**
