@@ -290,7 +290,7 @@ class TaskService extends Service {
 		} else {
 			whereStr = `where leadOrg = ${query.orgnizationId} or assistOrg like '%${query.orgnizationId}%'`;
 		}
-		let sqlList = `SELECT * from task_list ${whereStr}  order by updateTime desc limit ${
+		let sqlList = `SELECT * from task_list ${whereStr} order by updateTime desc limit ${
 			pageNum * pageSize
 		},${pageSize}`;
 		let sqlTotal = `SELECT COUNT(*) from task_list ${whereStr}`;
