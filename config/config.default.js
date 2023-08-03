@@ -17,35 +17,35 @@ module.exports = (appInfo) => {
 
 	// add your middleware config here
 	config.middleware = [];
-	config.mysql = {
-		// database configuration
-		client: {
-			host: "localhost",
-			// port
-			port: "3306",
-			// username
-			user: "htgl",
-			// password
-			password: "m7Dj6XHreejRBkDk",
-			// database
-			database: "task_base",
-		},
-	};
 	// config.mysql = {
 	// 	// database configuration
 	// 	client: {
-	// 		// host
 	// 		host: "localhost",
 	// 		// port
 	// 		port: "3306",
 	// 		// username
-	// 		user: "root",
+	// 		user: "htgl",
 	// 		// password
-	// 		password: "11111111",
+	// 		password: "m7Dj6XHreejRBkDk",
 	// 		// database
-	// 		database: "task_supervise_schema",
+	// 		database: "task_base",
 	// 	},
 	// };
+	config.mysql = {
+		// database configuration
+		client: {
+			// host
+			host: "localhost",
+			// port
+			port: "3306",
+			// username
+			user: "root",
+			// password
+			password: "11111111",
+			// database
+			database: "task_supervise_schema",
+		},
+	};
 	// 前端端口，跟随实际情况修改
 	const port = 9001;
 	const domainWhiteList = [

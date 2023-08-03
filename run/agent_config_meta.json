@@ -171,157 +171,157 @@
     "defaultViewEngine": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-view@2.1.4@egg-view/config/config.default.js",
     "mapping": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-view@2.1.4@egg-view/config/config.default.js"
   },
-  "env": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-  "name": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-  "cookies": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-  "proxy": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-  "maxIpsCount": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-  "maxProxyCount": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-  "protocolHeaders": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-  "ipHeaders": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-  "hostHeaders": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
+  "env": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+  "name": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+  "cookies": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+  "proxy": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+  "maxIpsCount": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+  "maxProxyCount": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+  "protocolHeaders": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+  "ipHeaders": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+  "hostHeaders": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
   "pkg": {
-    "name": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "version": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "description": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "private": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
+    "name": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "version": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "description": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "private": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
     "egg": {
-      "declarations": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js"
+      "declarations": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js"
     },
     "dependencies": {
-      "dayjs": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "egg": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "egg-cors": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "egg-mysql": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "egg-scripts": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js"
+      "dayjs": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "egg": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "egg-cors": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "egg-mysql": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "egg-scripts": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js"
     },
     "devDependencies": {
-      "egg-bin": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "egg-ci": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "egg-mock": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "eslint": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "eslint-config-egg": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js"
+      "egg-bin": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "egg-ci": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "egg-mock": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "eslint": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "eslint-config-egg": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js"
     },
     "engines": {
-      "node": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js"
+      "node": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js"
     },
     "scripts": {
-      "start": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "stop": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "dev": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "debug": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "test": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "test-local": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "cov": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "lint": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "ci": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js"
+      "start": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "stop": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "dev": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "debug": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "test": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "test-local": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "cov": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "lint": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "ci": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js"
     },
     "ci": {
-      "version": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "type": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js"
+      "version": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "type": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js"
     },
     "repository": {
-      "type": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "url": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js"
+      "type": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "url": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js"
     },
-    "author": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "license": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js"
+    "author": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "license": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js"
   },
-  "baseDir": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-  "HOME": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-  "rundir": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
+  "baseDir": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+  "HOME": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+  "rundir": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
   "dump": {
-    "ignore": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
+    "ignore": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
     "timing": {
-      "slowBootActionMinDuration": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js"
+      "slowBootActionMinDuration": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js"
     }
   },
   "confusedConfigurations": {
-    "bodyparser": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "notFound": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "sitefile": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "middlewares": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "httpClient": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js"
+    "bodyparser": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "notFound": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "sitefile": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "middlewares": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "httpClient": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js"
   },
   "notfound": {
-    "pageUrl": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js"
+    "pageUrl": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js"
   },
   "siteFile": {
-    "/favicon.ico": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "cacheControl": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js"
+    "/favicon.ico": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "cacheControl": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js"
   },
   "bodyParser": {
-    "enable": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "encoding": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "formLimit": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "jsonLimit": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "textLimit": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "strict": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
+    "enable": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "encoding": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "formLimit": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "jsonLimit": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "textLimit": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "strict": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
     "queryString": {
-      "arrayLimit": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "depth": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "parameterLimit": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js"
+      "arrayLimit": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "depth": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "parameterLimit": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js"
     },
-    "onerror": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js"
+    "onerror": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js"
   },
   "logger": {
-    "dir": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "encoding": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "env": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "level": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "consoleLevel": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "disableConsoleAfterReady": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "outputJSON": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "buffer": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "appLogName": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "coreLogName": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "agentLogName": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "errorLogName": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
+    "dir": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "encoding": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "env": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "level": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "consoleLevel": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "disableConsoleAfterReady": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "outputJSON": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "buffer": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "appLogName": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "coreLogName": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "agentLogName": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "errorLogName": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
     "coreLogger": {
-      "consoleLevel": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.local.js"
+      "consoleLevel": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.local.js"
     },
-    "allowDebugAtProd": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "enablePerformanceTimer": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "enableFastContextLogger": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js"
+    "allowDebugAtProd": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "enablePerformanceTimer": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "enableFastContextLogger": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js"
   },
   "httpclient": {
-    "enableDNSCache": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "dnsCacheLookupInterval": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "dnsCacheMaxLength": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
+    "enableDNSCache": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "dnsCacheLookupInterval": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "dnsCacheMaxLength": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
     "request": {
-      "timeout": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js"
+      "timeout": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js"
     },
     "httpAgent": {
-      "keepAlive": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "freeSocketTimeout": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "maxSockets": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "maxFreeSockets": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js"
+      "keepAlive": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "freeSocketTimeout": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "maxSockets": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "maxFreeSockets": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js"
     },
     "httpsAgent": {
-      "keepAlive": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "freeSocketTimeout": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "maxSockets": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "maxFreeSockets": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js"
+      "keepAlive": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "freeSocketTimeout": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "maxSockets": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "maxFreeSockets": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js"
     },
-    "useHttpClientNext": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js"
+    "useHttpClientNext": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js"
   },
   "meta": {
-    "enable": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "logging": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js"
+    "enable": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "logging": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js"
   },
-  "coreMiddleware": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-  "workerStartTimeout": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-  "serverTimeout": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
+  "coreMiddleware": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+  "workerStartTimeout": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+  "serverTimeout": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
   "cluster": {
     "listen": {
-      "path": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "port": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-      "hostname": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js"
+      "path": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "port": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+      "hostname": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js"
     }
   },
   "clusterClient": {
-    "maxWaitTime": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js",
-    "responseTimeout": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js"
+    "maxWaitTime": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js",
+    "responseTimeout": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js"
   },
-  "onClientError": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.3@egg/config/config.default.js"
+  "onClientError": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/config.default.js"
 }

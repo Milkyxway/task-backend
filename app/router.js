@@ -24,4 +24,8 @@ module.exports = (app) => {
 	router.post("/api/login", controller.role.login);
 	router.post("/api/modifypwd", controller.role.modifypwd);
 	router.post("/api/createaccount", controller.role.createaccount);
+
+	router.post("/api/chart/pie", controller.charts.getPieChart);
+	router.post("/api/chart/sort", controller.charts.getSectionTaskSort);
+	router.post("/api/chart/finishprocess", controller.charts.getFinishProcess);
 };
