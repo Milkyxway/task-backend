@@ -163,10 +163,17 @@ class TaskService extends Service {
 	 * @param {*} query
 	 */
 	async updateTask(query) {
-		await this.app.mysql.update("task_list", query, {
-			where: {
-				taskId: query.taskId,
-			},
+		return new Promise(async (resolve, reject) => {
+			await this.app.mysql.update(
+				"task_list",
+				{ ...query, updateTime: new Date() },
+				{
+					where: {
+						taskId: query.taskId,
+					},
+				}
+			);
+			resolve();
 		});
 	}
 
@@ -191,7 +198,7 @@ class TaskService extends Service {
 		// 操作的是子任务 每一条子任务修改状态 所有子任务都完成后把父任务置为完成
 		await this.app.mysql.update(
 			"subtask_list",
-			{ status: 4 },
+			{ status: 4, updateTime: new Date() },
 			{ where: { subtaskId: query.subtaskId } }
 		);
 
@@ -221,6 +228,7 @@ class TaskService extends Service {
 					"subtask_list",
 					{
 						status: 4,
+						updateTime: new Date(),
 					},
 					{
 						where: {
@@ -263,9 +271,7 @@ class TaskService extends Service {
 	async appeal(query) {
 		return new Promise(async (resolve, reject) => {
 			try {
-				await this.app.mysql.update("task_list", query, {
-					where: { taskId: query.taskId },
-				});
+				await this.updateTask(query);
 				resolve();
 			} catch (e) {
 				reject(e);
@@ -319,38 +325,43 @@ class TaskService extends Service {
 		const { list, taskId } = query;
 		const last = list.length - 1;
 		await this.app.mysql.insert("subtask_list", list);
-		await this.app.mysql.update(
-			"task_list",
-			{
-				updateTime: new Date(),
-				status: 3,
-				finishTime: list[last].finishTime,
-			},
-			{ where: { taskId } }
-		);
+		// await this.app.mysql.update(
+		//  "task_list",
+		//  {
+		//   updateTime: new Date(),
+		//   status: 3,
+		//   finishTime: list[last].finishTime,
+		//  },
+		//  { where: { taskId } }
+		// );
+		await this.updateTask({ status: 3, finishTime: list[last].finishTime });
 		// this.updateTaskStatus(query.taskId, 3); // 任务拆分即进入进行中
 	}
 
 	// async updateSubTask(query) {
-	// 	let count = 0;
-	// 	const { taskId, list } = query;
-	// 	console.log(list);
-	// 	list.map(async (i) => {
-	// 		await this.app.mysql.update("subtask_list", i, {
-	// 			where: { subtaskId: i.subtaskId },
-	// 		});
-	// 		count++;
-	// 		if (count === list.length - 1) {
-	// 			this.updateTaskStatus(taskId, 3);
-	// 		}
-	// 	});
+	//  let count = 0;
+	//  const { taskId, list } = query;
+	//  console.log(list);
+	//  list.map(async (i) => {
+	//   await this.app.mysql.update("subtask_list", i, {
+	//    where: { subtaskId: i.subtaskId },
+	//   });
+	//   count++;
+	//   if (count === list.length - 1) {
+	//    this.updateTaskStatus(taskId, 3);
+	//   }
+	//  });
 	// }
 
 	async updateSubTask(query) {
 		const { subtaskId, parentId, status } = query;
-		await this.app.mysql.update("subtask_list", query, {
-			where: { subtaskId },
-		});
+		await this.app.mysql.update(
+			"subtask_list",
+			{ ...query, updateTime: new Date() },
+			{
+				where: { subtaskId },
+			}
+		);
 
 		if ([6, 7].includes(status)) {
 			const list = await this.app.mysql.select("subtask_list", {
