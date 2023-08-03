@@ -26,7 +26,7 @@ module.exports = (appInfo) => {
 			// username
 			user: "htgl",
 			// password
-			password: "m7Dj6XHreejRBkDk",
+			password: "zRjJbtfDK6tcR4xx",
 			// database
 			database: "task_base",
 		},
