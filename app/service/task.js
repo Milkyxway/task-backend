@@ -313,13 +313,17 @@ class TaskService extends Service {
 		//  },
 		//  { where: { taskId } }
 		// );
-		await this.updateTask({ status: 3, finishTime: list[last].finishTime });
+		await this.updateTask({
+			status: 3,
+			finishTime: list[last].finishTime,
+			taskId,
+		});
 		// this.updateTaskStatus(query.taskId, 3); // 任务拆分即进入进行中
 	}
 
 	// async updateSubTask(query) {
 	//  let count = 0;
-	//  const { taskId, list } = query;
+	//  const { taskId, list } = query;x
 	//  console.log(list);
 	//  list.map(async (i) => {
 	//   await this.app.mysql.update("subtask_list", i, {
