@@ -40,7 +40,9 @@ class TaskService extends Service {
 			whereStr = commonSql("assistOrg", assistOrg);
 		}
 		if (createTime) {
-			whereStr = commonSql("createTime", createTime);
+			whereStr = this.isEmptyObj(notEmptyParams)
+				? `where createTime between '${createTime[0]}' and '${createTime[1]}'`
+				: `${whereStr} and createTime between '${createTime[0]}' and '${createTime[1]}'`;
 		}
 		if (keyword) {
 			whereStr = commonSql("taskContent", keyword);
@@ -52,35 +54,12 @@ class TaskService extends Service {
 	async getTasksByQuery(params) {
 		const { pageNum, pageSize, keyword, assistOrg, createTime, ...rest } =
 			params;
-		let notEmptyParams = {};
-		let whereStr = "";
-		Object.keys(rest).map((i) => {
-			if (rest[i] !== null) {
-				notEmptyParams[i] = rest[i];
-			}
-		});
-		Object.keys(notEmptyParams).map((i, index) => {
-			if (index !== 0) {
-				whereStr = whereStr + ` && ${i} = '${notEmptyParams[i]}'`;
-			} else {
-				whereStr = `WHERE ${i} = '${notEmptyParams[i]}'`;
-			}
-		});
-		const commonSql = (key, val) => {
-			return this.isEmptyObj(notEmptyParams)
-				? `where ${key} like '%${val}%'`
-				: `${whereStr} and ${key} like '%${val}%'`;
-		};
-
-		if (assistOrg) {
-			whereStr = commonSql("assistOrg", assistOrg);
-		}
-		if (createTime) {
-			whereStr = commonSql("createTime", createTime);
-		}
-		if (keyword) {
-			whereStr = commonSql("taskContent", keyword);
-		}
+		let whereStr = this.handleQueryToSqlStr(
+			rest,
+			assistOrg,
+			createTime,
+			keyword
+		);
 
 		let list = await this.app.mysql.query(
 			`select * from task_list ${whereStr} order by updateTime desc limit ${
