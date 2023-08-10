@@ -52,7 +52,7 @@ class TaskService extends Service {
 
 	// 获取任务列表
 	async getTasksByQuery(params) {
-		const { pageNum, pageSize, keyword, assistOrg, createTime, ...rest } =
+		const { pageNum, pageSize, keyword, assistOrg, createTime, role, ...rest } =
 			params;
 		let whereStr = this.handleQueryToSqlStr(
 			rest,
@@ -60,12 +60,16 @@ class TaskService extends Service {
 			createTime,
 			keyword
 		);
-
-		let list = await this.app.mysql.query(
-			`select * from task_list ${whereStr} order by updateTime desc limit ${
+		let sqlStr = `select * from task_list ${whereStr} order by updateTime desc limit ${
+			pageNum * pageSize
+		},${pageSize}`;
+		if (role === "leader") {
+			// 领导视角按照任务状态优先排序
+			sqlStr = `select * from task_list ${whereStr} order by statusWeight asc, updateTime desc limit ${
 				pageNum * pageSize
-			},${pageSize}`
-		);
+			},${pageSize}`;
+		}
+		let list = await this.app.mysql.query(sqlStr);
 
 		const [{ "COUNT(*)": total }] = await this.app.mysql.query(
 			`SELECT COUNT(*) from task_list ${whereStr}`

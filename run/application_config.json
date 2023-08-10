@@ -207,9 +207,9 @@
       "client": {
         "host": "localhost",
         "port": "3306",
-        "user": "htgl",
-        "password": "<String len: 16>",
-        "database": "task_base"
+        "user": "root",
+        "password": "<String len: 8>",
+        "database": "task_supervise_schema"
       }
     },
     "cors": {
