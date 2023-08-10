@@ -67,7 +67,19 @@ class RoleService extends Service {
 	 * @param {*} query
 	 */
 	async createAccount(query) {
-		await this.app.mysql.insert("user", query);
+		return new Promise(async (resolve, reject) => {
+			const useraccount = await this.app.mysql.select("user", {
+				where: {
+					username: query.username,
+				},
+			});
+			if (useraccount.length) {
+				reject("该账户已存在");
+			} else {
+				await this.app.mysql.insert("user", query);
+				resolve();
+			}
+		});
 	}
 }
 

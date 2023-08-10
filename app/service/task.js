@@ -1,5 +1,14 @@
 const Service = require("egg").Service;
 const dayjs = require("dayjs");
+const statusWeightMap = {
+	1: 5, // 待确认权重5
+	2: 4, // 待调整
+	3: 3, // 进行中
+	4: 7, // 已完成
+	5: 1, // 已延期
+	6: 6, // 已提交
+	7: 2, // 延期后再进行
+};
 class TaskService extends Service {
 	async index() {
 		const result = await this.app.mysql.select("category");
@@ -149,7 +158,11 @@ class TaskService extends Service {
 		return new Promise(async (resolve, reject) => {
 			await this.app.mysql.update(
 				"task_list",
-				{ ...query, updateTime: new Date() },
+				{
+					...query,
+					updateTime: new Date(),
+					statusWeight: statusWeightMap[query.status],
+				},
 				{
 					where: {
 						taskId: query.taskId,
@@ -242,7 +255,7 @@ class TaskService extends Service {
 	async updateTaskStatus(taskId, status) {
 		await this.app.mysql.update(
 			"task_list",
-			{ status, updateTime: new Date() },
+			{ status, updateTime: new Date(), statusWeight: statusWeightMap[status] },
 			{ where: { taskId } }
 		);
 	}
