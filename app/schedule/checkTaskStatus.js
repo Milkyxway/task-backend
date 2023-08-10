@@ -15,13 +15,27 @@ const statusWeightMap = {
 class logTime extends Subscription {
 	static get schedule() {
 		return {
-			cron: "0 0 16 * * ?",
+			cron: "0 0 15 * * ?",
 			// interval: "30s",
 			type: "worker",
 		};
 	}
 
 	async subscribe() {
+		const allSubTasks = this.app.mysql.select("subtask_list");
+		allSubTasks.map(async (i) => {
+			await this.app.mysql.update(
+				"subtask_list",
+				{
+					statusWeight: statusWeightMap[i.status],
+				},
+				{
+					where: {
+						subtaskId: i.subtaskId,
+					},
+				}
+			);
+		});
 		const list = await this.app.mysql.select("subtask_list", {
 			where: { status: 3 },
 		});

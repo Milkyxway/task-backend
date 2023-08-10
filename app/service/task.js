@@ -194,22 +194,13 @@ class TaskService extends Service {
 		// 操作的是子任务 每一条子任务修改状态 所有子任务都完成后把父任务置为完成
 		await this.app.mysql.update(
 			"subtask_list",
-			{ status: 4, updateTime: new Date() },
+			{ status: 4, updateTime: new Date(), statusWeight: statusWeightMap[4] },
 			{ where: { subtaskId: query.subtaskId } }
 		);
 
-		const allSubTasks = await this.selectByCondition(
-			{ where: { parentId: query.parentId } },
-			"subtask_list"
-		);
-
-		const allFinishSubTask = await this.selectByCondition(
-			{ where: { status: 4, parentId: query.parentId } },
-			"subtask_list"
-		);
-		if (allFinishSubTask.length === allSubTasks.length) {
-			this.updateTaskStatus(query.parentId, 4);
-		}
+		const sqlStr = `select * from task_list where parentId = ${query.parentId} order by statusWeight asc`;
+		const subtasks = await this.app.mysql.query(sqlStr);
+		this.updateTask({ status: subtasks[0].status, taskId: query.parentId });
 	}
 
 	/**
@@ -225,6 +216,7 @@ class TaskService extends Service {
 					{
 						status: 4,
 						updateTime: new Date(),
+						statusWeight: statusWeightMap[4],
 					},
 					{
 						where: {
@@ -357,7 +349,11 @@ class TaskService extends Service {
 		const { subtaskId, parentId, status } = query;
 		await this.app.mysql.update(
 			"subtask_list",
-			{ ...query, updateTime: new Date() },
+			{
+				...query,
+				updateTime: new Date(),
+				statusWeight: statusWeightMap[query.status],
+			},
 			{
 				where: { subtaskId },
 			}
