@@ -291,11 +291,13 @@ class TaskService extends Service {
 		if (whereStr) {
 			whereStr = `${whereStr} and leadOrg = ${query.orgnizationId} or assistOrg like '%${query.orgnizationId}%'`;
 		} else {
-			whereStr = `where leadOrg = ${query.orgnizationId} or assistOrg like '%${query.orgnizationId}%'`;
+			whereStr = `where leadOrg = ${query.orgnizationId} or CONCAT(",",assistOrg,",") like '%,${query.orgnizationId},%'`;
 		}
+
 		let sqlList = `SELECT * from task_list ${whereStr} order by updateTime desc limit ${
 			pageNum * pageSize
 		},${pageSize}`;
+		console.log(sqlList);
 		let sqlTotal = `SELECT COUNT(*) from task_list ${whereStr}`;
 
 		const list = await this.app.mysql.query(sqlList);
