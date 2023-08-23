@@ -180,9 +180,7 @@ class TaskService extends Service {
 	async deleteTask(query) {
 		await this.app.mysql.delete("task_list", { taskId: query.taskId });
 		if (query.children) {
-			await this.app.mysql.delete("subtask_list", {
-				where: { parentId: query.taskId },
-			});
+			await this.app.mysql.delete("subtask_list", { parentId: query.taskId });
 		}
 	}
 
@@ -377,6 +375,10 @@ class TaskService extends Service {
 				this.updateTaskStatus(parentId, 3);
 			}
 		}
+	}
+
+	async deleteSubTask(query) {
+		await this.app.mysql.delete("subtask_list", { subtaskId: query.subtaskId });
 	}
 
 	async selectByCondition(options = {}, tableName = "task_list") {
