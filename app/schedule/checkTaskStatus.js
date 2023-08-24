@@ -22,16 +22,17 @@ class logTime extends Subscription {
 	}
 
 	async subscribe() {
+		const allTasks = this.app.mysql.select("task_list");
 		const allSubTasks = this.app.mysql.select("subtask_list");
-		allSubTasks.map(async (i) => {
+		allTasks.map(async (i) => {
 			await this.app.mysql.update(
-				"subtask_list",
+				"task_list",
 				{
 					statusWeight: statusWeightMap[i.status],
 				},
 				{
 					where: {
-						subtaskId: i.subtaskId,
+						taskId: i.taskId,
 					},
 				}
 			);

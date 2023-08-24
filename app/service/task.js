@@ -69,12 +69,21 @@ class TaskService extends Service {
 			createTime,
 			keyword
 		);
+
 		let sqlStr = `select * from task_list ${whereStr} order by updateTime desc limit ${
 			pageNum * pageSize
 		},${pageSize}`;
 		if (role === "leader") {
 			// 领导视角按照任务状态优先排序
 			sqlStr = `select * from task_list ${whereStr} order by statusWeight asc, updateTime desc limit ${
+				pageNum * pageSize
+			},${pageSize}`;
+		}
+		if (role === "employee") {
+			whereStr = whereStr
+				? `${whereStr} and taskSource = 1 or taskSource = 2`
+				: "where taskSource = 1 or taskSource = 2";
+			sqlStr = `select * from task_list ${whereStr} order by updateTime desc limit ${
 				pageNum * pageSize
 			},${pageSize}`;
 		}
