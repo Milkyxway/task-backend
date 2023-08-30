@@ -10,22 +10,27 @@ class ReportService extends Service {
 	 * @param {*} query
 	 */
 	async getReportList(query) {
-		// const user = await this.app.mysql.select("user", {
-		// 	where: {
-		// 		username: query.username,
-		// 	},
-		// });
-		// return new Promise((res, reject) => {
-		// 	if (user) {
-		// 		if (query.password === user[0].password) {
-		// 			const { password, ...rest } = user[0];
-		// 			res({
-		// 				userInfo: { ...rest }, // 不把密码返回给前端
-		// 			});
-		// 		}
-		// 	}
-		// 	reject();
-		// });
+		const { pageNum, pageSize, reportType, keyword } = query;
+		return new Promise(async (res, reject) => {
+			try {
+				let whereStr = `where reportType = ${reportType}`;
+				if (keyword) {
+					whereStr = `${whereStr} and reportName like '%${keyword}%'`;
+				}
+				const sql = `select * from report_list ${whereStr} limit ${
+					pageNum * pageSize
+				},${pageSize}`;
+				const list = await this.app.mysql.query(sql);
+				const sqlTotal = `SELECT COUNT(*) from report_list ${whereStr}`;
+				const [{ "COUNT(*)": total }] = await this.app.mysql.query(sqlTotal);
+				res({
+					list,
+					total,
+				});
+			} catch (e) {
+				reject(e);
+			}
+		});
 	}
 }
 
