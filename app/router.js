@@ -18,6 +18,7 @@ module.exports = (app) => {
 	router.post("/api/task/detail", controller.task.detail);
 	router.post("/api/task/appeal", controller.task.appeal);
 	router.post("/api/task/mine", controller.task.myTask);
+	router.post("/api/task/batchadd", controller.task.addBatchTasks);
 	router.post("/api/subtask/add", controller.task.addChildTask);
 	router.post("/api/subtask/update", controller.task.updateSubTask);
 	router.delete("/api/subtask/delete", controller.task.deleteSubTask);

@@ -139,6 +139,38 @@ class TaskService extends Service {
 		});
 	}
 
+	async addBatchTasks(list) {
+		return new Promise((resolve, reject) => {
+			let counter = 0;
+			list.map(async (i) => {
+				// if (!i.taskContent) {
+				// 	reject("缺少任务内容");
+				// }
+				// if (!i.category) {
+				// 	reject("缺少任务类别");
+				// }
+				// if (!i.taskSource) {
+				// 	reject("缺少任务来源");
+				// }
+				// if (!i.leadOrg) {
+				// 	reject("缺少牵头部门");
+				// }
+				try {
+					await this.app.mysql.insert("task_list", {
+						...i,
+						status: 1,
+						createTime: new Date(),
+						updateTime: new Date(),
+					});
+					counter === list.length - 1 && resolve();
+					counter++;
+				} catch (e) {
+					reject(e);
+				}
+			});
+		});
+	}
+
 	/**
 	 * 获取任务详情
 	 * @param {*} taskId

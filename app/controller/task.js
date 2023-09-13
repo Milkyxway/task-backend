@@ -77,6 +77,12 @@ class TaskController extends Controller {
 		const result = await service.task.deleteSubTask(ctx.request.body);
 		return ctx.sendSuccess(result);
 	}
+
+	async addBatchTasks() {
+		const { ctx, service } = this;
+		const result = await service.task.addBatchTasks(ctx.request.body);
+		return ctx.sendSuccess(result);
+	}
 }
 
 module.exports = TaskController;
