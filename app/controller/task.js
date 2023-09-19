@@ -83,6 +83,18 @@ class TaskController extends Controller {
 		const result = await service.task.addBatchTasks(ctx.request.body);
 		return ctx.sendSuccess(result);
 	}
+
+	async setFocus() {
+		const { ctx, service } = this;
+		const result = await service.task.setFocus(ctx.request.body);
+		return ctx.sendSuccess(result);
+	}
+
+	async getFocusList() {
+		const { ctx, service } = this;
+		const result = await service.task.getFocusList(ctx.request.body);
+		return ctx.sendSuccess(result);
+	}
 }
 
 module.exports = TaskController;

@@ -116,6 +116,33 @@ class TaskService extends Service {
 		});
 	};
 
+	/**
+	 * 获取关注列表
+	 * @param {*} query
+	 * @returns
+	 */
+	getFocusList(query) {
+		const { pageNum, pageSize } = query;
+		return new Promise(async (resolve, reject) => {
+			try {
+				const sqlStr = `select * from task_list where focusBy like '%${
+					query.username
+				}%' order by updateTime desc limit ${pageNum * pageSize},${pageSize}`;
+				const list = await this.app.mysql.query(sqlStr);
+				const [{ "COUNT(*)": total }] = await this.app.mysql.query(
+					`SELECT COUNT(*) from task_list where focusBy like '%${query.username}%'`
+				);
+				this.setData(list).then((res) => {
+					resolve({
+						list,
+						total,
+					});
+				});
+			} catch (e) {
+				reject(e);
+			}
+		});
+	}
 	getChildTasks = (parentId) => {
 		return new Promise(async (resolve, reject) => {
 			const childTasks = this.selectByCondition(
@@ -319,6 +346,8 @@ class TaskService extends Service {
 			assistOrg,
 			createTime,
 			keyword,
+			role,
+			manageParts,
 			...rest
 		} = query;
 		let whereStr = this.handleQueryToSqlStr(
@@ -327,16 +356,22 @@ class TaskService extends Service {
 			createTime,
 			keyword
 		);
-		if (whereStr) {
-			whereStr = `${whereStr} and leadOrg = ${query.orgnizationId} or assistOrg like '%${query.orgnizationId}%'`;
+
+		if (role === "sub-leader") {
+			// 分管领导看到自己管辖的部门
+			whereStr = whereStr
+				? `${whereStr} and leadOrg in (${manageParts})`
+				: `where leadOrg in (${manageParts})`;
 		} else {
-			whereStr = `where leadOrg = ${query.orgnizationId} or CONCAT(",",assistOrg,",") like '%,${query.orgnizationId},%'`;
+			// 部门角色看到自己牵头或者协办
+			whereStr = whereStr
+				? `${whereStr} and leadOrg = ${query.orgnizationId} or CONCAT(",",assistOrg,",") like '%,${query.orgnizationId},%'`
+				: `where leadOrg = ${query.orgnizationId} or CONCAT(",",assistOrg,",") like '%,${query.orgnizationId},%'`;
 		}
 
 		let sqlList = `SELECT * from task_list ${whereStr} order by updateTime desc limit ${
 			pageNum * pageSize
 		},${pageSize}`;
-		console.log(sqlList);
 		let sqlTotal = `SELECT COUNT(*) from task_list ${whereStr}`;
 
 		const list = await this.app.mysql.query(sqlList);
@@ -354,37 +389,12 @@ class TaskService extends Service {
 		const { list, taskId } = query;
 		const last = list.length - 1;
 		await this.app.mysql.insert("subtask_list", list);
-		// await this.app.mysql.update(
-		//  "task_list",
-		//  {
-		//   updateTime: new Date(),
-		//   status: 3,
-		//   finishTime: list[last].finishTime,
-		//  },
-		//  { where: { taskId } }
-		// );
 		await this.updateTask({
 			status: 3,
 			finishTime: list[last].finishTime,
 			taskId,
 		});
-		// this.updateTaskStatus(query.taskId, 3); // 任务拆分即进入进行中
 	}
-
-	// async updateSubTask(query) {
-	//  let count = 0;
-	//  const { taskId, list } = query;x
-	//  console.log(list);
-	//  list.map(async (i) => {
-	//   await this.app.mysql.update("subtask_list", i, {
-	//    where: { subtaskId: i.subtaskId },
-	//   });
-	//   count++;
-	//   if (count === list.length - 1) {
-	//    this.updateTaskStatus(taskId, 3);
-	//   }
-	//  });
-	// }
 
 	async updateSubTask(query) {
 		const { subtaskId, parentId, status } = query;
@@ -420,6 +430,20 @@ class TaskService extends Service {
 
 	async deleteSubTask(query) {
 		await this.app.mysql.delete("subtask_list", { subtaskId: query.subtaskId });
+	}
+
+	async setFocus(query) {
+		await this.app.mysql.update(
+			"task_list",
+			{
+				focusBy: query.focusBy,
+			},
+			{
+				where: {
+					taskId: query.taskId,
+				},
+			}
+		);
 	}
 
 	async selectByCondition(options = {}, tableName = "task_list") {
