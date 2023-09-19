@@ -4,12 +4,14 @@
 
 import 'egg';
 import ExportHome = require('../../../app/controller/home');
+import ExportReport = require('../../../app/controller/report');
 import ExportRole = require('../../../app/controller/role');
 import ExportTask = require('../../../app/controller/task');
 
 declare module 'egg' {
   interface IController {
     home: ExportHome;
+    report: ExportReport;
     role: ExportRole;
     task: ExportTask;
   }

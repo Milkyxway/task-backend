@@ -28,4 +28,6 @@ module.exports = (app) => {
 	router.post("/api/login", controller.role.login);
 	router.post("/api/modifypwd", controller.role.modifypwd);
 	router.post("/api/createaccount", controller.role.createaccount);
+
+	router.post("/api/report/list", controller.report.getReportList);
 };

@@ -107,7 +107,7 @@
       "defaultLocale": "en_US",
       "dirs": [
         "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-session@3.3.0@egg-session/config/locales",
-        "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/locales",
+        "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/locales",
         "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-jsonp@2.0.0@egg-jsonp/config/locales",
         "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-onerror@2.2.0@egg-onerror/config/locales",
         "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-i18n@2.1.1@egg-i18n/config/locales",
@@ -207,9 +207,9 @@
       "client": {
         "host": "localhost",
         "port": "3306",
-        "user": "htgl",
-        "password": "<String len: 16>",
-        "database": "task_base"
+        "user": "root",
+        "password": "<String len: 8>",
+        "database": "task_supervise_schema"
       }
     },
     "cors": {
@@ -462,8 +462,8 @@
       ],
       "env": [],
       "from": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg@3.17.4@egg/config/plugin.js",
-      "path": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security",
-      "version": "3.0.0"
+      "path": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security",
+      "version": "3.1.0"
     },
     "development": {
       "enable": true,

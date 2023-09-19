@@ -19,57 +19,57 @@
   "security": {
     "csrf": {
       "enable": "/Users/xujiashuang/Desktop/task-backend/config/config.default.js",
-      "type": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js",
-      "ignoreJSON": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js",
-      "useSession": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js",
-      "cookieName": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js",
-      "sessionName": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js",
-      "headerName": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js",
-      "bodyName": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js",
-      "queryName": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js",
-      "supportedRequests": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js",
-      "refererWhiteList": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js"
+      "type": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js",
+      "ignoreJSON": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js",
+      "useSession": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js",
+      "cookieName": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js",
+      "sessionName": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js",
+      "headerName": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js",
+      "bodyName": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js",
+      "queryName": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js",
+      "supportedRequests": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js",
+      "refererWhiteList": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js"
     },
-    "domainWhiteList": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js",
-    "protocolWhiteList": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js",
-    "defaultMiddleware": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js",
+    "domainWhiteList": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js",
+    "protocolWhiteList": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js",
+    "defaultMiddleware": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js",
     "xframe": {
-      "enable": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js",
-      "value": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js"
+      "enable": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js",
+      "value": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js"
     },
     "hsts": {
-      "enable": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.local.js",
-      "maxAge": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js",
-      "includeSubdomains": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js"
+      "enable": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.local.js",
+      "maxAge": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js",
+      "includeSubdomains": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js"
     },
     "dta": {
-      "enable": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js"
+      "enable": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js"
     },
     "methodnoallow": {
-      "enable": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js"
+      "enable": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js"
     },
     "noopen": {
-      "enable": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js"
+      "enable": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js"
     },
     "nosniff": {
-      "enable": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js"
+      "enable": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js"
     },
     "referrerPolicy": {
-      "enable": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js",
-      "value": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js"
+      "enable": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js",
+      "value": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js"
     },
     "xssProtection": {
-      "enable": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js",
-      "value": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js"
+      "enable": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js",
+      "value": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js"
     },
     "csp": {
-      "enable": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js",
-      "policy": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js"
+      "enable": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js",
+      "policy": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js"
     },
     "ssrf": {
-      "ipBlackList": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js",
-      "ipExceptionList": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js",
-      "checkAddress": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js"
+      "ipBlackList": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js",
+      "ipExceptionList": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js",
+      "checkAddress": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js"
     }
   },
   "cors": {
@@ -84,7 +84,7 @@
     "logValue": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-session@3.3.0@egg-session/config/config.default.js"
   },
   "helper": {
-    "shtml": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.0.0@egg-security/config/config.default.js"
+    "shtml": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-security@3.1.0@egg-security/config/config.default.js"
   },
   "jsonp": {
     "limit": "/Users/xujiashuang/Desktop/task-backend/node_modules/_egg-jsonp@2.0.0@egg-jsonp/config/config.default.js",

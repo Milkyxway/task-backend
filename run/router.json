@@ -114,6 +114,42 @@
       "POST"
     ],
     "paramNames": [],
+    "path": "/api/task/batchadd",
+    "regexp": "/^\\/api\\/task\\/batchadd(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/task/focus",
+    "regexp": "/^\\/api\\/task\\/focus(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/task/focuslist",
+    "regexp": "/^\\/api\\/task\\/focuslist(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
     "path": "/api/subtask/add",
     "regexp": "/^\\/api\\/subtask\\/add(?:\\/(?=$))?$/",
     "stack": [
@@ -128,6 +164,18 @@
     "paramNames": [],
     "path": "/api/subtask/update",
     "regexp": "/^\\/api\\/subtask\\/update(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "DELETE"
+    ],
+    "paramNames": [],
+    "path": "/api/subtask/delete",
+    "regexp": "/^\\/api\\/subtask\\/delete(?:\\/(?=$))?$/",
     "stack": [
       "wrappedController"
     ]
@@ -164,6 +212,18 @@
     "paramNames": [],
     "path": "/api/createaccount",
     "regexp": "/^\\/api\\/createaccount(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/report/list",
+    "regexp": "/^\\/api\\/report\\/list(?:\\/(?=$))?$/",
     "stack": [
       "wrappedController"
     ]
