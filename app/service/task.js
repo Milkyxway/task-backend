@@ -106,12 +106,27 @@ class TaskService extends Service {
 			if (list.length) {
 				list.map(async (i) => {
 					const children = await this.getChildTasks(i.taskId);
+					const leadComment = await this.getLeadComment(i.taskId);
 					i.children = children;
+					i.leadComment = leadComment;
 					count === list.length - 1 && resolve();
 					count++;
 				});
 			} else {
 				resolve();
+			}
+		});
+	};
+
+	getLeadComment = (taskId) => {
+		return new Promise(async (resolve, reject) => {
+			try {
+				const list = await this.app.mysql.query(
+					`select * from comment_list where taskId = ${taskId}`
+				);
+				resolve(list.map((i) => `${i.username}: ${i.comment}`).join("；"));
+			} catch (e) {
+				reject(e);
 			}
 		});
 	};
@@ -170,18 +185,6 @@ class TaskService extends Service {
 		return new Promise((resolve, reject) => {
 			let counter = 0;
 			list.map(async (i) => {
-				// if (!i.taskContent) {
-				// 	reject("缺少任务内容");
-				// }
-				// if (!i.category) {
-				// 	reject("缺少任务类别");
-				// }
-				// if (!i.taskSource) {
-				// 	reject("缺少任务来源");
-				// }
-				// if (!i.leadOrg) {
-				// 	reject("缺少牵头部门");
-				// }
 				try {
 					await this.app.mysql.insert("task_list", {
 						...i,
@@ -224,20 +227,24 @@ class TaskService extends Service {
 	 */
 	async updateTask(query) {
 		return new Promise(async (resolve, reject) => {
-			await this.app.mysql.update(
-				"task_list",
-				{
-					...query,
-					updateTime: new Date(),
-					statusWeight: statusWeightMap[query.status],
-				},
-				{
-					where: {
-						taskId: query.taskId,
+			try {
+				await this.app.mysql.update(
+					"task_list",
+					{
+						...query,
+						updateTime: new Date(),
+						statusWeight: statusWeightMap[query.status],
 					},
-				}
-			);
-			resolve();
+					{
+						where: {
+							taskId: query.taskId,
+						},
+					}
+				);
+				resolve();
+			} catch (e) {
+				reject(e);
+			}
 		});
 	}
 
@@ -444,6 +451,25 @@ class TaskService extends Service {
 				},
 			}
 		);
+	}
+
+	/**
+	 * 增加领导批注
+	 * @param {*} data
+	 * @returns
+	 */
+	addLeadComment(data) {
+		return new Promise(async (resolve, reject) => {
+			try {
+				await this.app.mysql.insert("comment_list", {
+					...data,
+					createTime: new Date(),
+				});
+				resolve();
+			} catch (e) {
+				reject(e);
+			}
+		});
 	}
 
 	async selectByCondition(options = {}, tableName = "task_list") {

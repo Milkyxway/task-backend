@@ -95,6 +95,12 @@ class TaskController extends Controller {
 		const result = await service.task.getFocusList(ctx.request.body);
 		return ctx.sendSuccess(result);
 	}
+
+	async addLeadComment() {
+		const { ctx, service } = this;
+		const result = await service.task.addLeadComment(ctx.request.body);
+		return ctx.sendSuccess(result);
+	}
 }
 
 module.exports = TaskController;
