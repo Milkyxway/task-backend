@@ -124,7 +124,12 @@ class TaskService extends Service {
 				const list = await this.app.mysql.query(
 					`select * from comment_list where taskId = ${taskId}`
 				);
-				resolve(list.map((i) => `${i.username}: ${i.comment}`).join("；"));
+				resolve(
+					list
+						.filter((i) => i.comment)
+						.map((i) => `${i.username}: ${i.comment}`)
+						.join("；")
+				);
 			} catch (e) {
 				reject(e);
 			}
@@ -465,6 +470,32 @@ class TaskService extends Service {
 					...data,
 					createTime: new Date(),
 				});
+				resolve();
+			} catch (e) {
+				reject(e);
+			}
+		});
+	}
+
+	/**
+	 * 修改领导批注
+	 * @param {*} data
+	 * @returns
+	 */
+	updateLeadComment(data) {
+		return new Promise(async (resolve, reject) => {
+			try {
+				await this.app.mysql.update(
+					"comment_list",
+					{
+						...data,
+					},
+					{
+						where: {
+							taskId: data.taskId,
+						},
+					}
+				);
 				resolve();
 			} catch (e) {
 				reject(e);

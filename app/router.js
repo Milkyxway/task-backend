@@ -22,6 +22,7 @@ module.exports = (app) => {
 	router.post("/api/task/focus", controller.task.setFocus);
 	router.post("/api/task/focuslist", controller.task.getFocusList);
 	router.post("/api/task/addleadcomment", controller.task.addLeadComment);
+	router.post("/api/task/updateleadcomment", controller.task.updateLeadComment);
 	router.post("/api/subtask/add", controller.task.addChildTask);
 	router.post("/api/subtask/update", controller.task.updateSubTask);
 	router.delete("/api/subtask/delete", controller.task.deleteSubTask);
