@@ -13,15 +13,15 @@ class logTime extends Subscription {
 	}
 
 	async subscribe() {
-		// const statusWeightMap = {
-		// 	1: 5, // 待确认权重5
-		// 	2: 4, // 待调整
-		// 	3: 3, // 进行中
-		// 	4: 7, // 已完成
-		// 	5: 1, // 已延期
-		// 	6: 6, // 已提交
-		// 	7: 2, // 延期后再进行
-		// };
+		const statusWeightMap = {
+			1: 5, // 待确认权重5
+			2: 4, // 待调整
+			3: 3, // 进行中
+			4: 7, // 已完成
+			5: 1, // 已延期
+			6: 6, // 已提交
+			7: 2, // 延期后再进行
+		};
 		// const allTasks = await this.app.mysql.select("task_list");
 		// const allSubTasks = await this.app.mysql.select("subtask_list");
 		// allTasks.map(async (i) => {
