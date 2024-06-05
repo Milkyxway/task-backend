@@ -31,6 +31,9 @@ module.exports = app => {
   router.post('/api/login', controller.role.login);
   router.post('/api/modifypwd', controller.role.modifypwd);
   router.post('/api/createaccount', controller.role.createaccount);
+  router.post('/api/userlist', controller.role.getUserList);
+  router.post('/api/userdelete', controller.role.deleteUser);
+  router.post('/api/userupdate', controller.role.updateUser);
 
   router.post('/api/chart/pie', controller.charts.getPieChart);
   router.post('/api/chart/sort', controller.charts.getSectionTaskSort);

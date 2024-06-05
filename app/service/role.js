@@ -81,6 +81,62 @@ class RoleService extends Service {
       }
     });
   }
+
+  /**
+   * 获取用户列表
+   * @param query
+   * @return
+   */
+  getUserList(query) {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const sql = query ? `select * from user where username like '%${query.username}%' or usernameCn like '%${query.username}%'`
+          : 'select * from user';
+        const result = await this.app.mysql.query(sql);
+        resolve({
+          list: result,
+        });
+      } catch (e) {
+        reject(e);
+      }
+    });
+  }
+
+  /**
+   * 删除用户
+   * @param {*} query
+   * @return
+   */
+  deleteUser(query) {
+    return new Promise(async (resolve, reject) => {
+      try {
+        await this.app.mysql.delete('user', {
+          userId: query.userId,
+        });
+        resolve();
+      } catch (e) {
+        reject(e);
+      }
+    });
+  }
+
+  /**
+   * 修改用户
+   * @param {*} query
+   * @return
+   */
+  updateUser(query) {
+    return new Promise(async (resolve, reject) => {
+      try {
+        await this.app.mysql.update('user', query, {
+          where: { userId: query.userId },
+        });
+        resolve();
+      } catch (e) {
+        reject(e);
+      }
+    });
+  }
 }
 
 module.exports = RoleService;

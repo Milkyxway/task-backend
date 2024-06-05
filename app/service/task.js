@@ -54,7 +54,9 @@ class TaskService extends Service {
         : `${whereStr} and createTime between '${createTime[0]}' and '${createTime[1]}'`;
     }
     if (keyword) {
-      whereStr = commonSql('taskContent', keyword);
+      whereStr = this.isEmptyObj(notEmptyParams)
+        ? `where taskContent like '%${keyword}%' or sourceDesc like '%${keyword}%'`
+        : `${whereStr} and (taskContent like '%${keyword}%' or sourceDesc like '%${keyword}%')`;
     }
     return whereStr;
   }
@@ -443,10 +445,9 @@ class TaskService extends Service {
 
   async deleteSubTask(query) {
     // await this.app.mysql.delete('subtask_list', { subtaskId: query.subtaskId });
-    await this.app.mysql.delete('subtask_list', {...query});
+    await this.app.mysql.delete('subtask_list', { ...query });
   }
 
-  
 
   async setFocus(query) {
     await this.app.mysql.update(
