@@ -90,8 +90,9 @@ class RoleService extends Service {
   getUserList(query) {
     return new Promise(async (resolve, reject) => {
       try {
-        const sql = query ? `select * from user where username like '%${query.username}%' or usernameCn like '%${query.username}%'`
-          : 'select * from user';
+        const sql = query.username ? `select * from user where region = '${query.region}' and 
+        (username like '%${query.username}%' or usernameCn like '%${query.username}%')`
+          : `select * from user where region = '${query.region}' `;
         const result = await this.app.mysql.query(sql);
         resolve({
           list: result,
