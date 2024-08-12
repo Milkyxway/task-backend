@@ -1,0 +1,63 @@
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2024-06-13 14:28:47
+count workspace : c:\Users\xjsww\Desktop\workspace\task-backend
+total files : 40
+total code lines : 14612
+total comment lines : 217
+total blank lines : 212
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |               |              6|             16|              0|  0.041|
+   |          .json|          13329|              0|             70|     91|
+   |           .yml|             37|              1|              9|   0.25|
+   |            .ts|             83|             18|              8|   0.57|
+   |            .md|             21|              3|             12|   0.14|
+   |           .log|            120|              0|              0|   0.82|
+   |            .js|           1016|            179|            113|    7.0|
+   -------------------------------------------------------------------------
+.eslintignore, code is 1, comment is 0, blank is 0.
+.eslintrc, code is 4, comment is 0, blank is 0.
+.github\workflows\nodejs.yml, code is 37, comment is 1, blank is 9.
+.gitignore, code is 1, comment is 16, blank is 0.
+app\controller\charts.js, code is 32, comment is 0, blank is 5.
+app\controller\home.js, code is 9, comment is 0, blank is 3.
+app\controller\report.js, code is 18, comment is 0, blank is 4.
+app\controller\role.js, code is 63, comment is 0, blank is 5.
+app\controller\task.js, code is 98, comment is 0, blank is 20.
+app\extend\context.js, code is 15, comment is 0, blank is 0.
+app\router.js, code is 31, comment is 6, blank is 5.
+app\schedule\checkTaskStatus.js, code is 72, comment is 8, blank is 7.
+app\service\charts.js, code is 44, comment is 1, blank is 4.
+app\service\report.js, code is 27, comment is 8, blank is 2.
+app\service\role.js, code is 105, comment is 32, blank is 7.
+app\service\task.js, code is 437, comment is 77, blank is 40.
+config\config.default.js, code is 40, comment is 40, blank is 6.
+config\plugin.js, code is 11, comment is 5, blank is 1.
+jsconfig.json, code is 4, comment is 0, blank is 1.
+logs\task-backend\common-error.log, code is 0, comment is 0, blank is 0.
+logs\task-backend\egg-agent.log, code is 120, comment is 0, blank is 0.
+logs\task-backend\egg-schedule.log, code is 0, comment is 0, blank is 0.
+logs\task-backend\egg-web.log, code is 0, comment is 0, blank is 0.
+logs\task-backend\task-backend-web.log, code is 0, comment is 0, blank is 0.
+package-lock.json, code is 10833, comment is 0, blank is 2.
+package.json, code is 47, comment is 0, blank is 0.
+README.md, code is 21, comment is 3, blank is 12.
+run\agent_config.json, code is 574, comment is 0, blank is 12.
+run\agent_config_meta.json, code is 327, comment is 0, blank is 0.
+run\agent_timing_17932.json, code is 394, comment is 0, blank is 0.
+run\application_config.json, code is 610, comment is 0, blank is 13.
+run\application_config_meta.json, code is 327, comment is 0, blank is 0.
+run\router.json, code is 213, comment is 0, blank is 42.
+test\app\controller\home.test.js, code is 14, comment is 2, blank is 4.
+typings\app\controller\index.d.ts, code is 15, comment is 3, blank is 2.
+typings\app\extend\context.d.ts, code is 6, comment is 3, blank is 1.
+typings\app\index.d.ts, code is 3, comment is 3, blank is 1.
+typings\app\service\index.d.ts, code is 17, comment is 3, blank is 2.
+typings\config\index.d.ts, code is 8, comment is 3, blank is 1.
+typings\config\plugin.d.ts, code is 34, comment is 3, blank is 1.
+===============================================================================

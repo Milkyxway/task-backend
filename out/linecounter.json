@@ -1,0 +1,294 @@
+{
+    "extension": "linecounter",
+    "version": "0.2.7",
+    "workspace": "c:\\Users\\xjsww\\Desktop\\workspace\\task-backend",
+    "linecount": [
+        {
+            "version": "0.2.7",
+            "counttime": "2024-06-13 14:28:47",
+            "filesum": 40,
+            "codesum": 14612,
+            "commentsum": 217,
+            "blanksum": 212,
+            "statistics": {
+                "": {
+                    "code": 6,
+                    "comment": 16,
+                    "blank": 0
+                },
+                ".json": {
+                    "code": 13329,
+                    "comment": 0,
+                    "blank": 70
+                },
+                ".yml": {
+                    "code": 37,
+                    "comment": 1,
+                    "blank": 9
+                },
+                ".ts": {
+                    "code": 83,
+                    "comment": 18,
+                    "blank": 8
+                },
+                ".md": {
+                    "code": 21,
+                    "comment": 3,
+                    "blank": 12
+                },
+                ".log": {
+                    "code": 120,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".js": {
+                    "code": 1016,
+                    "comment": 179,
+                    "blank": 113
+                }
+            },
+            "filelist": [
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": ".eslintignore"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": ".eslintrc"
+                },
+                {
+                    "blank": 9,
+                    "code": 37,
+                    "comment": 1,
+                    "filename": ".github\\workflows\\nodejs.yml"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 16,
+                    "filename": ".gitignore"
+                },
+                {
+                    "blank": 5,
+                    "code": 32,
+                    "comment": 0,
+                    "filename": "app\\controller\\charts.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "app\\controller\\home.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "app\\controller\\report.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 63,
+                    "comment": 0,
+                    "filename": "app\\controller\\role.js"
+                },
+                {
+                    "blank": 20,
+                    "code": 98,
+                    "comment": 0,
+                    "filename": "app\\controller\\task.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "app\\extend\\context.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 31,
+                    "comment": 6,
+                    "filename": "app\\router.js"
+                },
+                {
+                    "blank": 7,
+                    "code": 72,
+                    "comment": 8,
+                    "filename": "app\\schedule\\checkTaskStatus.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 44,
+                    "comment": 1,
+                    "filename": "app\\service\\charts.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 27,
+                    "comment": 8,
+                    "filename": "app\\service\\report.js"
+                },
+                {
+                    "blank": 7,
+                    "code": 105,
+                    "comment": 32,
+                    "filename": "app\\service\\role.js"
+                },
+                {
+                    "blank": 40,
+                    "code": 437,
+                    "comment": 77,
+                    "filename": "app\\service\\task.js"
+                },
+                {
+                    "blank": 6,
+                    "code": 40,
+                    "comment": 40,
+                    "filename": "config\\config.default.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 11,
+                    "comment": 5,
+                    "filename": "config\\plugin.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "jsconfig.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "logs\\task-backend\\common-error.log"
+                },
+                {
+                    "blank": 0,
+                    "code": 120,
+                    "comment": 0,
+                    "filename": "logs\\task-backend\\egg-agent.log"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "logs\\task-backend\\egg-schedule.log"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "logs\\task-backend\\egg-web.log"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "logs\\task-backend\\task-backend-web.log"
+                },
+                {
+                    "blank": 2,
+                    "code": 10833,
+                    "comment": 0,
+                    "filename": "package-lock.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 47,
+                    "comment": 0,
+                    "filename": "package.json"
+                },
+                {
+                    "blank": 12,
+                    "code": 21,
+                    "comment": 3,
+                    "filename": "README.md"
+                },
+                {
+                    "blank": 12,
+                    "code": 574,
+                    "comment": 0,
+                    "filename": "run\\agent_config.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 327,
+                    "comment": 0,
+                    "filename": "run\\agent_config_meta.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 394,
+                    "comment": 0,
+                    "filename": "run\\agent_timing_17932.json"
+                },
+                {
+                    "blank": 13,
+                    "code": 610,
+                    "comment": 0,
+                    "filename": "run\\application_config.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 327,
+                    "comment": 0,
+                    "filename": "run\\application_config_meta.json"
+                },
+                {
+                    "blank": 42,
+                    "code": 213,
+                    "comment": 0,
+                    "filename": "run\\router.json"
+                },
+                {
+                    "blank": 4,
+                    "code": 14,
+                    "comment": 2,
+                    "filename": "test\\app\\controller\\home.test.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 15,
+                    "comment": 3,
+                    "filename": "typings\\app\\controller\\index.d.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 3,
+                    "filename": "typings\\app\\extend\\context.d.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 3,
+                    "comment": 3,
+                    "filename": "typings\\app\\index.d.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 17,
+                    "comment": 3,
+                    "filename": "typings\\app\\service\\index.d.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 8,
+                    "comment": 3,
+                    "filename": "typings\\config\\index.d.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 34,
+                    "comment": 3,
+                    "filename": "typings\\config\\plugin.d.ts"
+                }
+            ]
+        }
+    ]
+}

@@ -113,6 +113,23 @@ class TaskController extends Controller {
     const result = await service.task.exportAsExcel(ctx.request.body);
     return ctx.sendSuccess(result);
   }
+
+  async getOrgList() {
+    const { ctx, service } = this;
+    const result = await service.task.getOrgList(ctx.request.body);
+    return ctx.sendSuccess(result);
+  }
+  async updateSection() {
+    const { ctx, service } = this;
+    const result = await service.task.updateSection(ctx.request.body);
+    return ctx.sendSuccess(result);
+  }
+
+  async addSection() {
+    const { ctx, service } = this;
+    const result = await service.task.addSection(ctx.request.body);
+    return ctx.sendSuccess(result);
+  }
 }
 
 module.exports = TaskController;

@@ -27,6 +27,9 @@ module.exports = app => {
   router.post('/api/subtask/update', controller.task.updateSubTask);
   router.delete('/api/subtask/delete', controller.task.deleteSubTask);
   router.post('/api/task/export', controller.task.exportAsExcel);
+  router.post('/api/task/getOrgList', controller.task.getOrgList);
+  router.post('/api/task/updateSection', controller.task.updateSection);
+  router.post('/api/task/addSection', controller.task.addSection);
 
   router.post('/api/login', controller.role.login);
   router.post('/api/modifypwd', controller.role.modifypwd);

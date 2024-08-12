@@ -544,6 +544,66 @@ class TaskService extends Service {
     });
   }
 
+/**
+ * 获取部门列表
+ * @param {*} query 
+ * @returns 
+ */
+  getOrgList(query) {
+    return new Promise(async(resolve, reject) => {
+      try {
+        const sql = `select * from org_list where region = ${query.region}`
+        const result = await this.app.mysql.query(sql)
+        resolve(result)
+      } catch(e) {
+        reject(e)
+      }
+    })
+  }
+
+
+  /**
+   * 修改部门名称
+   * @param {*} query 
+   * @returns 
+   */
+  updateSection(query) {
+    return new Promise(async(resolve, reject) => {
+      try {
+        await this.app.mysql.update(
+          'org_list',
+          {
+            ...query
+          },
+          {
+            where: {
+              sectionId: query.sectionId,
+            },
+          }
+        );
+        resolve()
+      } catch(e) {
+        reject(e)
+      }
+    })
+  }
+
+  /**
+   * 增加部门
+   * @param {*} query 
+   * @returns 
+   */
+  addSection(query) {
+    return new Promise(async(resolve, reject) => {
+      try {
+        await this.app.mysql.insert('org_list', query);
+        resolve();
+      } catch(e) {
+        reject(e)
+      }
+    })
+  }
+
 }
 
 module.exports = TaskService;
