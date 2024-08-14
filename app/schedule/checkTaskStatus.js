@@ -14,8 +14,8 @@ class logTime extends Subscription {
 
   async subscribe() {
     const statusWeightMap = {
-      1: 5, // 待确认权重5
-      2: 4, // 待调整
+      1: -1, // 待确认权重5
+      2: 0, // 待调整
       3: 3, // 进行中
       4: 7, // 已完成
       5: 1, // 已延期
@@ -52,7 +52,7 @@ class logTime extends Subscription {
     const sql = 'select * from task_list where status = 3 and resolveType is null';
     const result = await this.app.mysql.query(sql);
     const delayMainTask = result.filter(
-      i => dayjs(i.finishTime).format() < dayjs().format()
+      i => dayjs(i.finishTime).format() < dayjs().endOf('day').format()
     );
     if (delayMainTask.length) {
       let delayTimes = 1;

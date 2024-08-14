@@ -1,8 +1,8 @@
 const Service = require('egg').Service;
 
 const statusWeightMap = {
-  1: 5, // 待确认权重5
-  2: 4, // 待调整
+  1: -1, // 待确认权重5
+  2: 0, // 待调整
   3: 3, // 进行中
   4: 7, // 已完成
   5: 1, // 已延期
@@ -75,7 +75,7 @@ class TaskService extends Service {
     let sqlStr = `select * from task_list ${whereStr} order by updateTime desc limit ${
       pageNum * pageSize
     },${pageSize}`;
-    if (role === 'leader') {
+    if (['leader', 'section', 'admin'].includes(role)) {
       // 领导视角按照任务状态优先排序
       sqlStr = `select * from task_list ${whereStr} order by statusWeight asc, updateTime desc limit ${
         pageNum * pageSize
