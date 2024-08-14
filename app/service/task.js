@@ -552,7 +552,7 @@ class TaskService extends Service {
   getOrgList(query) {
     return new Promise(async(resolve, reject) => {
       try {
-        const sql = `select * from org_list where region = ${query.region}`
+        const sql = `select * from org_list where region = '${query.region}'`
         const result = await this.app.mysql.query(sql)
         resolve(result)
       } catch(e) {
