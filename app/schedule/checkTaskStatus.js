@@ -25,7 +25,7 @@ class logTime extends Subscription {
     const list = await this.app.mysql.select('subtask_list', {
       where: { status: 3 },
     });
-    const delayTask = list.filter(i => i.finishTime < dayjs(Date().now));
+    const delayTask = list.filter(i => dayjs(i.finishTime).format('YYYY-MM-DD') < dayjs().format('YYYY-MM-DD'));
     if (delayTask.length) {
       let delayTimes = 1;
       delayTask.map(async i => {
@@ -52,7 +52,7 @@ class logTime extends Subscription {
     const sql = 'select * from task_list where status = 3 and resolveType is null';
     const result = await this.app.mysql.query(sql);
     const delayMainTask = result.filter(
-      i => dayjs(i.finishTime).format() < dayjs().endOf('day').format()
+      i => dayjs(i.finishTime).format('YYYY-MM-DD') < dayjs().format('YYYY-MM-DD')
     );
     if (delayMainTask.length) {
       let delayTimes = 1;
