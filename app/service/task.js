@@ -55,7 +55,7 @@ class TaskService extends Service {
     }
     if (keyword) {
       whereStr = this.isEmptyObj(notEmptyParams)
-        ? `where taskContent like '%${keyword}%' or sourceDesc like '%${keyword}%'`
+        ? `where (taskContent like '%${keyword}%' or sourceDesc like '%${keyword}%)'`
         : `${whereStr} and (taskContent like '%${keyword}%' or sourceDesc like '%${keyword}%')`;
     }
     return whereStr;
@@ -375,8 +375,8 @@ class TaskService extends Service {
     if (role === 'sub-leader') {
       // 分管领导看到自己管辖的部门
       whereStr = whereStr
-        ? `${whereStr} and leadOrg in (${manageParts})`
-        : `where leadOrg in (${manageParts})`;
+        ? `${whereStr} and (leadOrg in (${manageParts}) or assistOrg in (${manageParts}))`
+        : `where (leadOrg in (${manageParts}) or assistOrg in (${manageParts}))`;
     } else {
       // 部门角色看到自己牵头或者协办
       whereStr = whereStr
@@ -396,6 +396,7 @@ class TaskService extends Service {
       return {
         total,
         list,
+        
       };
     });
   }
