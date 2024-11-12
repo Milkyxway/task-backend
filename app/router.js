@@ -41,5 +41,8 @@ module.exports = app => {
   router.post('/api/chart/pie', controller.charts.getPieChart);
   router.post('/api/chart/sort', controller.charts.getSectionTaskSort);
   router.post('/api/chart/finishprocess', controller.charts.getFinishProcess);
+  
+  router.post('/api/chart/finishrate', controller.charts.getFinishRate);
+  
 
 };

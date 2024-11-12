@@ -44,6 +44,20 @@ class ChartsService extends Service {
 
     // console.log(statusTotal, total);
   }
+
+  async getFinishRate(query) {
+    return new Promise(async(resolve, reject) => {
+      try {
+        const sql = `select total.leadOrg,wc.完成数/total.总数 as rate from (select leadOrg, count(distinct taskId) 总数 from task_list where taskRegion = '${query.region}')total,
+        (select leadOrg, count(distinct taskId) 完成数 from task_list where status = 4 and taskRegion = '${query.region}')wc 
+        where total.leadOrg = wc.leadOrg(+) order by rate desc;`
+        const result = await this.app.mysql.query(sql)
+        resolve(result)
+      }catch(e) {
+        reject(e)
+      }
+    })
+  }
 }
 
 module.exports = ChartsService;
