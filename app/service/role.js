@@ -87,12 +87,13 @@ class RoleService extends Service {
    * @param query
    * @return
    */
-  getUserList(query) {
+ getUserList(query) {
     return new Promise(async (resolve, reject) => {
       try {
-        const sql = query.username ? `select * from user where region = '${query.region}' and 
+        let sql = query.username ? `select * from user where region = '${query.region}' and 
         (username like '%${query.username}%' or usernameCn like '%${query.username}%')`
           : `select * from user where region = '${query.region}' `;
+          sql = query.role ? `${sql} and role = '${query.role}'  `: sql;
         const result = await this.app.mysql.query(sql);
         resolve({
           list: result,
@@ -102,7 +103,6 @@ class RoleService extends Service {
       }
     });
   }
-
   /**
    * 删除用户
    * @param {*} query

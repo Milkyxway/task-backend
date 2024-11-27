@@ -48,9 +48,10 @@ class ChartsService extends Service {
   async getFinishRate(query) {
     return new Promise(async(resolve, reject) => {
       try {
-        const sql = `select total.leadOrg,wc.完成数/total.总数 as rate from (select leadOrg, count(distinct taskId) 总数 from task_list where taskRegion = '${query.region}')total,
-        (select leadOrg, count(distinct taskId) 完成数 from task_list where status = 4 and taskRegion = '${query.region}')wc 
-        where total.leadOrg = wc.leadOrg(+) order by rate desc;`
+        const sql = `select total.leadOrg,wc.完成数/total.总数 as rate, total.总数 as total from (select leadOrg, count(taskId) 总数 from task_list where taskRegion = '${query.region}' and leadOrg <> 0 group by leadOrg)total
+left join
+(select leadOrg, count(distinct taskId) 完成数 from task_list where status = 4 and taskRegion = '${query.region}' and leadOrg <> 0 group by leadOrg)wc 
+on total.leadOrg = wc.leadOrg order by rate desc`
         const result = await this.app.mysql.query(sql)
         resolve(result)
       }catch(e) {
@@ -58,6 +59,58 @@ class ChartsService extends Service {
       }
     })
   }
+  
+  statusProportion(query) {
+		return new Promise(async (resolve, reject) => {
+			try {
+				const finishCount = await this.app.mysql.query(
+					`select  count(distinct taskId) as value  from task_list where status in (4,6) and taskRegion = '${query.region}'`
+				);
+				const delayCount = await this.app.mysql.query(
+					`select  count(distinct taskId) as value  from task_list where status in (5,7) and taskRegion = '${query.region}'`
+				);
+				const processCount = await this.app.mysql.query(
+					`select  count(distinct taskId) as value  from task_list where status in (3) and taskRegion = '${query.region}'`
+				);
+				const totalCount = await this.app.mysql.query(
+					`select  count(distinct taskId) as value  from task_list where taskRegion = '${query.region}'`
+				);
+				resolve({
+					finishCount,
+					delayCount,
+					processCount,
+					totalCount,
+				});
+			} catch (e) {
+				reject(e);
+			}
+		});
+	}
+	
+newTaskinMonth(query) {
+		return new Promise(async (resolve, reject) => {
+			try {
+				const result = await this.app.mysql.query(
+					`select * from task_list where taskRegion = '${query.region}' order by createTime desc limit 5`
+				);
+				resolve(result);
+			} catch (e) {
+				reject(e);
+			}
+		});
+	}
+	getDelayTasks(query) {
+		return new Promise(async (resolve, reject) => {
+			try {
+				const result = await this.app.mysql
+					.query(`select t.leadOrg, count(distinct s.parentId) as count from task_list t, subtask_list s
+					where t.taskId = s.parentId and s.delayTimes is not null and t.taskRegion = '${query.region}' group by t.leadOrg`);
+				resolve(result);
+			} catch (e) {
+				reject(e);
+			}
+		});
+	}
 }
 
 module.exports = ChartsService;

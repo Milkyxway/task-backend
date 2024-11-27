@@ -42,6 +42,33 @@ class ChartsController extends Controller {
 			return ctx.sendError(e);
 		}
 	}
+	async statusProportion() {
+		const { ctx, service } = this;
+		try {
+			const result = await service.charts.statusProportion(ctx.request.body);
+			return ctx.sendSuccess(result);
+		} catch (e) {
+			return ctx.sendError(e);
+		}
+	}
+	async newTaskinMonth() {
+		const { ctx, service } = this;
+		try {
+			const result = await service.charts.newTaskinMonth(ctx.request.body);
+			return ctx.sendSuccess(result);
+		} catch (e) {
+			return ctx.sendError(e);
+		}
+	}
+	async getDelayTasks() {
+		const { ctx, service } = this;
+		try {
+			const result = await service.charts.getDelayTasks(ctx.request.body);
+			return ctx.sendSuccess(result);
+		} catch (e) {
+			return ctx.sendError(e);
+		}
+	}
 }
 
 module.exports = ChartsController;

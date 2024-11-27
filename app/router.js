@@ -43,6 +43,8 @@ module.exports = app => {
   router.post('/api/chart/finishprocess', controller.charts.getFinishProcess);
   
   router.post('/api/chart/finishrate', controller.charts.getFinishRate);
-  
+  router.post("/api/chart/statusProportion",controller.charts.statusProportion);
+  router.post("/api/chart/newTaskinMonth", controller.charts.newTaskinMonth);
+  router.post("/api/chart/delaytasks", controller.charts.getDelayTasks);
 
 };
