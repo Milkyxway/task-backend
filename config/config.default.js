@@ -74,8 +74,13 @@ module.exports = appInfo => {
 
   // add your user config here
   const userConfig = {
-    // myAppName: 'egg',
-  };
+		// myAppName: 'egg',
+		uploadDir: "app/public/upload",
+	};
+	config.multipart = {
+		mode: "file",
+		whitelist: [".xlsx", ".sql", ".doc", ".docx"],
+	};
 
   return {
     ...config,

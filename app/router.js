@@ -47,4 +47,7 @@ module.exports = app => {
   router.post("/api/chart/newTaskinMonth", controller.charts.newTaskinMonth);
   router.post("/api/chart/delaytasks", controller.charts.getDelayTasks);
 
+  router.post("/api/report/upload", controller.upload.upload);
+	router.post("/api/report/deletefile", controller.upload.deleteFile);
+
 };
