@@ -403,11 +403,12 @@ class TaskService extends Service {
 
   async addChildTask(query) {
     const { list, taskId } = query;
-    const last = list.length - 1;
+    list.sort((a,b) => b.finishTime -a.finishTime)
+    const maxDate = list[0].finishTime
     await this.app.mysql.insert('subtask_list', list);
     await this.updateTask({
       status: 3,
-      finishTime: list[last].finishTime,
+      finishTime: maxDate,
       taskId,
     });
   }

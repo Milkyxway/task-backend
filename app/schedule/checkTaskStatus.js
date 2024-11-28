@@ -22,9 +22,7 @@ class logTime extends Subscription {
       6: 6, // 已提交
       7: 2, // 延期后再进行
     };
-    const list = await this.app.mysql.select('subtask_list', {
-      where: { status: 3 },
-    });
+    const list = await this.app.mysql.query(`select * from subtask_list where status in (3, 7)`);
     const delayTask = list.filter(i => dayjs(i.finishTime).format('YYYY-MM-DD') < dayjs().format('YYYY-MM-DD'));
     if (delayTask.length) {
       let delayTimes = 1;
@@ -49,7 +47,7 @@ class logTime extends Subscription {
       });
     }
 
-    const sql = 'select * from task_list where status = 3 and resolveType is null';
+    const sql = 'select * from task_list where status in (3,7) and resolveType is null';
     const result = await this.app.mysql.query(sql);
     const delayMainTask = result.filter(
       i => dayjs(i.finishTime).format('YYYY-MM-DD') < dayjs().format('YYYY-MM-DD')
