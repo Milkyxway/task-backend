@@ -426,27 +426,15 @@ class TaskService extends Service {
         where: { subtaskId },
       }
     );
-
-    if ([ 6, 7 ].includes(status)) {
-      const list = await this.app.mysql.select('subtask_list', {
-        where: { parentId },
-      });
-      const statusLinkageList = await this.app.mysql.select('subtask_list', {
-        where: { parentId, status },
-      });
-      if (list.length === statusLinkageList.length) {
-        this.updateTaskStatus(parentId, status);
-      }
-      if (
-        list.filter(i => [ 3, 7 ].includes(i.status)).length === list.length
-      ) {
-        this.updateTaskStatus(parentId, 3);
-      }
+    
+    const list = await this.app.mysql.query(`select * from subtask_list where parentId = ${parentId} order by statusWeight asc`);
+    if (list.length) {
+      const parentStatus = list[0].status
+      this.updateTaskStatus(parentId, parentStatus);
     }
   }
 
   async deleteSubTask(query) {
-    // await this.app.mysql.delete('subtask_list', { subtaskId: query.subtaskId });
     await this.app.mysql.delete('subtask_list', { ...query });
   }
 
