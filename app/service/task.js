@@ -1,4 +1,5 @@
 const Service = require('egg').Service;
+const dayjs = require('dayjs');
 
 const statusWeightMap = {
   1: -1, // 待确认权重5
@@ -109,7 +110,7 @@ class TaskService extends Service {
         list.map(async i => {
           const children = await this.getChildTasks(i.taskId);
           const leadComment = await this.getLeadComment(i.taskId);
-          i.children = children;
+          i.children = children.sort((a, b) => dayjs(a.finishTime).unix() - dayjs(b.finishTime).unix());
           i.leadComment = leadComment;
           count === list.length - 1 && resolve();
           count++;
@@ -403,7 +404,8 @@ class TaskService extends Service {
 
   async addChildTask(query) {
     const { list, taskId } = query;
-    list.sort((a,b) => b.finishTime -a.finishTime)
+    const listCp = list
+    list.sort((a,b) => dayjs(b.finishTime).unix() - dayjs(a.finishTime).unix())
     const maxDate = list[0].finishTime
     await this.app.mysql.insert('subtask_list', list);
     await this.updateTask({

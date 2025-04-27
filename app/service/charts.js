@@ -50,7 +50,7 @@ class ChartsService extends Service {
       try {
         const sql = `select total.leadOrg,wc.完成数/total.总数 as rate, total.总数 as total from (select leadOrg, count(taskId) 总数 from task_list where taskRegion = '${query.region}' and leadOrg <> 0 group by leadOrg)total
 left join
-(select leadOrg, count(distinct taskId) 完成数 from task_list where status = 4 and taskRegion = '${query.region}' and leadOrg <> 0 group by leadOrg)wc 
+(select leadOrg, count(distinct taskId) 完成数 from task_list where status in (4,6) and taskRegion = '${query.region}' and leadOrg <> 0 group by leadOrg)wc 
 on total.leadOrg = wc.leadOrg order by rate desc`
         const result = await this.app.mysql.query(sql)
         resolve(result)
@@ -102,9 +102,10 @@ newTaskinMonth(query) {
 	getDelayTasks(query) {
 		return new Promise(async (resolve, reject) => {
 			try {
-				const result = await this.app.mysql
-					.query(`select t.leadOrg, count(distinct s.parentId) as count from task_list t, subtask_list s
-					where t.taskId = s.parentId and s.delayTimes is not null and t.taskRegion = '${query.region}' group by t.leadOrg`);
+				// const result = await this.app.mysql
+				// 	.query(`select t.leadOrg, count(distinct s.parentId) as count from task_list t, subtask_list s
+				// 	where t.taskId = s.parentId and s.delayTimes is not null and t.taskRegion = '${query.region}' group by t.leadOrg`);
+        const result = await this.app.mysql.query(`select leadOrg,  count(distinct taskId) as count from task_list where status in (5, 7) and taskRegion = '${query.region}' group by leadOrg`)
 				resolve(result);
 			} catch (e) {
 				reject(e);
