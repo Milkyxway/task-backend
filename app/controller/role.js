@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 const { Controller } = require('egg');
 
@@ -14,7 +14,7 @@ class RoleController extends Controller {
       const result = await service.role.login(ctx.request.body);
       return ctx.sendSuccess(result);
     } catch (e) {
-      return ctx.sendError('账户或密码填写错误');
+      return ctx.sendError(e || '账户或密码填写错误');
     }
   }
   async modifypwd() {

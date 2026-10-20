@@ -16,15 +16,18 @@ class RoleService extends Service {
       },
     });
     return new Promise((res, reject) => {
-      if (user) {
-        if (query.password === user[0].password) {
-          const { password, ...rest } = user[0];
-          res({
-            userInfo: { ...rest }, // 不把密码返回给前端
-          });
-        }
+      if (!user || user.length === 0) {
+        reject('账户不存在');
+        return;
       }
-      reject();
+      if (query.password === user[0].password) {
+        const { password, ...rest } = user[0];
+        res({
+          userInfo: { ...rest }, // 不把密码返回给前端
+        });
+      } else {
+        reject('密码错误');
+      }
     });
   }
 

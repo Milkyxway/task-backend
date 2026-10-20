@@ -1,4 +1,4 @@
-const Service = require('egg').Service;
+﻿const Service = require('egg').Service;
 const dayjs = require('dayjs');
 
 const statusWeightMap = {
@@ -59,6 +59,9 @@ class TaskService extends Service {
         ? `where (taskContent like '%${keyword}%' or sourceDesc like '%${keyword}%)'`
         : `${whereStr} and (taskContent like '%${keyword}%' or sourceDesc like '%${keyword}%')`;
     }
+    whereStr = whereStr
+      ? `${whereStr} and createTime >= '2026-10-16'`
+      : `where createTime >= '2026-10-16'`;
     return whereStr;
   }
 
@@ -150,10 +153,10 @@ class TaskService extends Service {
       try {
         const sqlStr = `select * from task_list where focusBy like '%${
           query.username
-        }%' order by updateTime desc limit ${pageNum * pageSize},${pageSize}`;
+        }%' and createTime >= '2026-10-16' order by updateTime desc limit ${pageNum * pageSize},${pageSize}`;
         const list = await this.app.mysql.query(sqlStr);
         const [{ 'COUNT(*)': total }] = await this.app.mysql.query(
-          `SELECT COUNT(*) from task_list where focusBy like '%${query.username}%'`
+          `SELECT COUNT(*) from task_list where focusBy like '%${query.username}%' and createTime >= '2026-10-16'`
         );
         this.setData(list).then(res => {
           resolve({

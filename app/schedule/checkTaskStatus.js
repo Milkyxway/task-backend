@@ -35,7 +35,7 @@ class logTime extends Subscription {
         }
         await this.app.mysql.update(
           'subtask_list',
-          { status: 5, delayTimes, updateTime: new Date() },
+          { status: 5, statusWeight: statusWeightMap[5], delayTimes:delayTimes, updateTime: new Date() },
           { where: { subtaskId: i.subtaskId } }
         );
         const list = await this.app.mysql.query(`select * from subtask_list where parentId = ${i.parentId} order by statusWeight asc limit 1`);
@@ -70,7 +70,7 @@ class logTime extends Subscription {
           'task_list',
           {
             status: 5,
-            delayTimes,
+            delayTimes:delayTimes,
             updateTime: new Date(),
             statusWeight: statusWeightMap[5],
           },
