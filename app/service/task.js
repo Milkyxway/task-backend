@@ -1,4 +1,4 @@
-﻿const Service = require('egg').Service;
+const Service = require('egg').Service;
 const dayjs = require('dayjs');
 
 const statusWeightMap = {
@@ -89,6 +89,18 @@ class TaskService extends Service {
       whereStr = whereStr
         ? `${whereStr} and taskSource = 1 or taskSource = 2`
         : 'where taskSource = 1 or taskSource = 2';
+      sqlStr = `select * from task_list ${whereStr} order by updateTime desc limit ${
+        pageNum * pageSize
+      },${pageSize}`;
+    }
+    if (role === 'browser') {
+      whereStr = whereStr
+        .replace(" and createTime >= '2026-10-16'", "")
+        .replace("where createTime >= '2026-10-16' and ", "where ")
+        .replace("where createTime >= '2026-10-16'", "");
+      whereStr = whereStr
+        ? `${whereStr} and taskSource = 5 and sourceDesc like '%2025%'`
+        : `where taskSource = 5 and sourceDesc like '%2025%'`;
       sqlStr = `select * from task_list ${whereStr} order by updateTime desc limit ${
         pageNum * pageSize
       },${pageSize}`;
